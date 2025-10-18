@@ -14,12 +14,13 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        repository.insert(1, "SpringBoot", "Kruy Tharin");
-        repository.insert(2, "Hibernate", "Kak Elay");
-        repository.insert(3, "Hibernate", "Kak Elay");
-        repository.insert(4, "Hibernate", "Kak Elay");
-        repository.insert(5, "Hibernate", "Kak Elay");
-        repository.insert(6, "Hibernate", "Kak Elay");
+        repository.insert(1, "SpringBoot", "សុខ សារ៉ន");
+        repository.insert(2, "Hibernate", "ឡាយ វុត្ថា");
+        repository.insert(3, "Hibernate", "ពៅ និរ័ត្ន");
+        repository.insert(4, "Hibernate", "ចាន់ ស្រីមុំ");
+        repository.insert(5, "Hibernate", "មនោ ចន្ទរ័ត្ន");
+        repository.insert(6, "Hibernate", "រ័ត្ន សុភាព");
+
     }
 }
 
