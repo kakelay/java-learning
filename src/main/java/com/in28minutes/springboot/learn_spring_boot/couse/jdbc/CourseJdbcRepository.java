@@ -10,11 +10,10 @@ public class CourseJdbcRepository {
     @Autowired
     private JdbcTemplate springjdbcTemplate;
 
-    private static final String SQL_INSERT_COURSE =
-            "INSERT INTO course(id, name, author) VALUES (?, ?, ?)";
+    private static final String SQL_INSERT_COURSE = "INSERT INTO course(id, name, author) VALUES (?, ?, ?)";
 
-    public void insert(long id, String name, String author){
-        springjdbcTemplate.update(SQL_INSERT_COURSE, id, name, author);
+    public void insert(Course course) {
+        springjdbcTemplate.update(SQL_INSERT_COURSE, course.getId(), course.getName(), course.getAuthor());
     }
 }
 
