@@ -10,10 +10,14 @@ public class CourseJdbcRepository {
     @Autowired
     private JdbcTemplate springjdbcTemplate;
 
-    private static final String SQL_INSERT_COURSE = "INSERT INTO course(id, name, author) VALUES (?, ?, ?)";
+    private static final String INSERT_QUERY = "INSERT INTO course(id, name, author) VALUES (?, ?, ?)";
+    private static final String DELETE_QUERY = "DELETE FROM course WHERE id = ?";
 
     public void insert(Course course) {
-        springjdbcTemplate.update(SQL_INSERT_COURSE, course.getId(), course.getName(), course.getAuthor());
+        springjdbcTemplate.update(INSERT_QUERY, course.getId(), course.getName(), course.getAuthor());
+    }
+    public void deleteById(long id) {
+        springjdbcTemplate.update(DELETE_QUERY, id);
     }
 }
 
