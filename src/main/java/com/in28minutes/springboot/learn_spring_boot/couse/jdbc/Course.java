@@ -10,11 +10,7 @@ public class Course {
         this.name = name;
         this.author = author;
     }
-
-    public Course() {
-
-    }
-
+    public Course(){}
     public String getName() {
         return name;
     }
@@ -37,5 +33,10 @@ public class Course {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" + "id=" + id + ", name='" + name+ ", author='" + author + '}';
     }
 }
