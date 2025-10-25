@@ -9,12 +9,13 @@ import jakarta.persistence.Id;
 public class Course {
     @Id
     private long id;
-    
     //    @Column(name = "name")
     private String name;
-    
     //    @Column(name = "author")
     private String author;
+    
+    public Course( ) {
+    }
     
     public Course( long id, String name, String author ) {
         this.id = id;
@@ -22,8 +23,6 @@ public class Course {
         this.author = author;
     }
     
-    public Course( ) {
-    }
     
     public String getName( ) {
         return name;
