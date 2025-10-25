@@ -30,8 +30,8 @@ public class CourseCommandLineRunner implements CommandLineRunner {
     }
     
     //    public CourseCommandLineRunner( CourseJdbcRepository repository ) {
-//        this.repository = repository;
-//    }
+    //        this.repository = repository;
+    //    }
     public CourseCommandLineRunner( CourseJpaRepository repository ) {
         this.repository = repository;
     }

@@ -23,7 +23,6 @@ public class Course {
         this.author = author;
     }
     
-    
     public String getName( ) {
         return name;
     }
