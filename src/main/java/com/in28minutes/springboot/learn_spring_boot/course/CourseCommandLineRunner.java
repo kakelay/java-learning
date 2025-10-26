@@ -1,7 +1,5 @@
 package com.in28minutes.springboot.learn_spring_boot.course;
 
-import com.in28minutes.springboot.learn_spring_boot.course.jdbc.Course;
-import com.in28minutes.springboot.learn_spring_boot.course.jdbc.CourseJdbcRepository;
 import com.in28minutes.springboot.learn_spring_boot.course.jpa.CourseJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

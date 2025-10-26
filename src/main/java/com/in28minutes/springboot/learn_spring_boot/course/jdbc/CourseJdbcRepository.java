@@ -1,5 +1,6 @@
 package com.in28minutes.springboot.learn_spring_boot.course.jdbc;
 
+import com.in28minutes.springboot.learn_spring_boot.course.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

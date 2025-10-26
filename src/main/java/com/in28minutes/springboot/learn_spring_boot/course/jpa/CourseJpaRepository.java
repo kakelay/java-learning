@@ -1,6 +1,6 @@
 package com.in28minutes.springboot.learn_spring_boot.course.jpa;
 
-import com.in28minutes.springboot.learn_spring_boot.course.jdbc.Course;
+import com.in28minutes.springboot.learn_spring_boot.course.Course;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
