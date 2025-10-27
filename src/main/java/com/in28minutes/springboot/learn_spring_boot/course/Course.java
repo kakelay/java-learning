@@ -16,7 +16,6 @@ public class Course {
     
     public Course( ) {
     }
-    
     public Course( long id, String name, String author ) {
         this.id = id;
         this.name = name;
@@ -51,4 +50,5 @@ public class Course {
     public String toString( ) {
         return "Course{" + "id=" + id + ", name='" + name + ", author='" + author + '}';
     }
+    
 }
