@@ -42,7 +42,6 @@ public class CourseCommandLineRunner implements CommandLineRunner {
         System.out.println( "All Records by Name: " + repository.findByName( "Learn AWS Jpa" ) );
         System.out.println( "All Records by Name: " + repository.findByName( "Learn DevOps Jpa!" ) );
     }
-    
 }
 
 
