@@ -25,7 +25,6 @@ public class SayHelloController {
         sb.append( "<h1> My Body for HTML </h1>" );
         sb.append( "</body>" );
         sb.append( "</html>" );
-        
         return sb.toString();
     }
 }
