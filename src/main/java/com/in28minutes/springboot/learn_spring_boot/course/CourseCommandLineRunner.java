@@ -12,7 +12,7 @@ public class CourseCommandLineRunner implements CommandLineRunner {
 //    @Autowired
 //    private final CourseJdbcRepository repository;
     
-//    @Autowired
+    //    @Autowired
 //    private final CourseJpaRepository repository;
     @Autowired
     private final CourseSpringDataRepository repository;
@@ -27,13 +27,22 @@ public class CourseCommandLineRunner implements CommandLineRunner {
         repository.save( new Course( 1, "Learn AWS Jpa!", "in28Minutes" ) );
         repository.save( new Course( 2, "Learn Azure Jpa!", "in28Minutes" ) );
         repository.save( new Course( 3, "Learn DevOps Jpa!", "in28Minutes" ) );
+        
         repository.deleteById( 1l );
         
         System.out.println( "Record with ID=2: " + repository.findById( 2l ) );
         System.out.println( "Record with ID=3: " + repository.findById( 3l ) );
         
+        System.out.println( "All Records: " + repository.findAll() );
+        System.out.println( "All Records by count: " + repository.count() );
+        
+        System.out.println( "All Records by Author: " + repository.findByAuthor( "in28Minutes" ) );
+        System.out.println( "All Records by Author: " + repository.findByAuthor( "" ) );
+        
+        System.out.println( "All Records by Name: " + repository.findByName( "Learn AWS Jpa" ) );
+        System.out.println( "All Records by Name: " + repository.findByName( "Learn DevOps Jpa!" ) );
     }
-  
+    
 }
 
 
