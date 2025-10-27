@@ -10,6 +10,6 @@ public class SayHelloController {
     @RequestMapping("say-hello")
     @ResponseBody
     public String sayHello( ) {
-        return "Hello!!! what are you doing";
+        return "Hello!!! what are you learning today ?";
     }
 }
