@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 @Entity
 // We can motify the table name as the new once  @Entity(name = "COURSE_Detail")
 public class Course {
+    
     @Id
     private long id;
     //    @Column(name = "name")
