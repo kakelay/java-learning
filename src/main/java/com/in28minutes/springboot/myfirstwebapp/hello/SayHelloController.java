@@ -30,10 +30,12 @@ public class SayHelloController {
         
     }
     
+    
     //  say-Hello-jsp => sayHelloJsp.jsp
     @RequestMapping("say-hello-jsp")
 //    @ResponseBody
     public String sayHelloJsp( ) {
         return "sayHello";
     }
+    
 }
