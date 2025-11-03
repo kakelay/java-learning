@@ -12,9 +12,9 @@ public class LoginController {
     /// http://localhost:8080/login?name=Elay
     /// Model
     @RequestMapping("login")
-    public String gotoLoginPage(@RequestParam String name ,  ModelMap model) {
-        model.put("name" , name);
-        System.out.println("Request Parameter Name is : " + name );
+    public String gotoLoginPage(@RequestParam String cid ,  ModelMap model) {
+        model.put("cid" , cid);
+        System.out.println("Request Parameter Name is : " + cid );
         return "login";
     }
 }

@@ -3,7 +3,6 @@
     <title>Login Jsp</title>
 </head>
 <body>
-   Welcome, to the login page.
-    name: ${name}
+GoodBye: ${cid}
 </body>
 </html>
