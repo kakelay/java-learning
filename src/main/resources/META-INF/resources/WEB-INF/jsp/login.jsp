@@ -1,8 +1,16 @@
 <html>
 <head>
-    <title>Login Jsp</title>
+    <title>Login Page</title>
 </head>
 <body>
-     CID: ${cid}
+Welcome to the login page.
+<br>
+<form action="/login" method="post">
+    Name: <input type="text" name="name">
+    Password: <input type="password" name="password">
+
+    <input type="submit" value="Submit">
+
+</form>
 </body>
 </html>
