@@ -3,6 +3,6 @@
     <title>Login Jsp</title>
 </head>
 <body>
-GoodBye: ${cid}
+     CID: ${cid}
 </body>
 </html>

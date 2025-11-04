@@ -14,7 +14,7 @@ public class LoginController {
     @RequestMapping("login")
     public String gotoLoginPage(@RequestParam String cid ,  ModelMap model) {
         model.put("cid" , cid);
-        System.out.println("Request Parameter Name is : " + cid );
+        System.out.println("cid is : " + cid );
         return "login";
     }
 }
