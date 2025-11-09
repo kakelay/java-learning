@@ -7,8 +7,8 @@
     <h1>Welcome, Page</h1>
 </div>
 <div>
-    <h2>Your name : ${name}</h2>
-    <h2>Your password : ${password}</h2>
+    <h2>Your name : ${name} </h2>
+    <hr>
     <div>
         <a href="list-todos">Manage : </a> Your todos
     </div>

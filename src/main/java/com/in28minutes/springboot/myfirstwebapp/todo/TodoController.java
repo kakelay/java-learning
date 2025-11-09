@@ -11,7 +11,6 @@ import java.util.List;
 
 @Controller
 @SessionAttributes("name")
-
 public class TodoController {
     //http://localhost:8080/list-todos
     private TodoService todoService;
