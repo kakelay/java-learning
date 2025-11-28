@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes("name")
 public class LoginController {
     
-    private AuthenticationService authenticationService;
+    private final  AuthenticationService authenticationService;
     
     public LoginController( AuthenticationService authenticationService ) {
         super();

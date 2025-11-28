@@ -19,7 +19,8 @@
 
         <label>
             Password:
-            <input type="password" name="password" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:5px;">
+            <input type="password" name="password"
+                   style="width:100%; padding:8px; border:1px solid #ccc; border-radius:5px;">
         </label>
 
         <input type="submit" value="Submit"
