@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.util.List;
@@ -24,9 +25,23 @@ public class TodoController {
     @RequestMapping("list-todos")
     public String listAllTodos( ModelMap model ) {
         
-        List<Todo> todos = todoService.findByUsername( null );
+        List<Todo> todos = todoService.findByUsername( "kakelay" );
         model.addAttribute( "todos", todos );
         
         return "listTodos";
+    }
+    
+    // GET , POST ,
+    @RequestMapping(value = "add-todo" , method = RequestMethod.GET)
+    public String showNewTodoPage( ) {
+        return "todo";
+    }
+    
+    // GET , POST ,
+    @RequestMapping(value = "add-todo" , method = RequestMethod.POST)
+    public String addNewTodo( ) {
+      
+       
+        return "redirect:list-todos";
     }
 }
