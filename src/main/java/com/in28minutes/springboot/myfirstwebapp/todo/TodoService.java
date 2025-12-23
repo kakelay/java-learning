@@ -14,10 +14,10 @@ public class TodoService {
     
     static {
         
-        todos.add( new Todo( ++todosCount, "Kak Elay", "Learn AWS", LocalDate.now().plusYears( 1 ), false ) );
-        todos.add( new Todo( ++todosCount, "Mey Gech", "Learn DevOps", LocalDate.now().plusYears( 2 ), false ) );
-        todos.add( new Todo( ++todosCount, "Ou Buntha", "Learn Full Stack Development", LocalDate.now().plusYears( 3 ), false ) );
-        todos.add( new Todo( ++todosCount, "Ky Chhengkong", "Learn Spring Boot", LocalDate.now().plusYears( 4 ), true ) );
+        todos.add( new Todo( ++todosCount, "Kak Elay", "Learn AWS", LocalDate.now().plusYears( 1 ), true ) );
+        todos.add( new Todo( ++todosCount, "haha Testing", "Learn DevOps", LocalDate.now().plusYears( 2 ), false ) );
+        todos.add( new Todo( ++todosCount, "AH Tin Bek sloy", "Learn Full Stack Development", LocalDate.now().plusYears( 3 ), false ) );
+        todos.add( new Todo( ++todosCount, "Tai Lnad", "Learn Spring Boot", LocalDate.now().plusYears( 4 ), true ) );
         
     }
     
