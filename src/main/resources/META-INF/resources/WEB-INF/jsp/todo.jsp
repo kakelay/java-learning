@@ -11,11 +11,18 @@
 <div class="container">
     <h1>Enter Todo Details</h1>
     <form:form method="post" modelAttribute="todo">
-        Descrription: <form:input type="text" name="description" path="description"
-                                  required="required"/>
+
+        <fieldset class="mb-3">
+            <form:label path="description">Description</form:label>
+            <form:input path="description" type="text" class="form-control"/>
+            <form:errors path="description" cssClass="text-danger"/>
+        </fieldset>
+
         <form:input type="hidden" path="id"/>
         <form:input type="hidden" path="done"/>
-        <input type="submit" class="btn btn-success"/>
+        <form:input type="hidden" path="targetDate"/>
+
+        <button type="submit" class="btn btn-success">Summit</button>
 
     </form:form>
 </div>
