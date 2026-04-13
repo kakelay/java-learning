@@ -3,6 +3,7 @@ package com.in28minutes.springboot.myfirstwebapp.controller;
 import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
 import com.in28minutes.springboot.myfirstwebapp.common.UserResponse;
 import org.springframework.context.MessageSource;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +21,8 @@ public class UserController {
     private String generateReference() {
         return String.format("%010d", (long)(Math.random() * 1_000_000_000L));
     }
-    
-    @GetMapping("/user")
+
+    @GetMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<BaseResponse<UserResponse>> helloWorldInternationalized(Locale locale) {
         
         String ref = generateReference();
