@@ -1,10 +1,9 @@
-package com.in28minutes.springboot.myfirstwebapp.common;
+package com.in28minutes.springboot.myfirstwebapp.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Getter
 @Builder

@@ -1,16 +1,10 @@
 package com.in28minutes.springboot.myfirstwebapp.controller;
 
-import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
-import com.in28minutes.springboot.myfirstwebapp.common.UserResponse;
-import org.springframework.context.MessageSource;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
-
-import java.util.Locale;
 
 @Controller
 @SessionAttributes("name")
