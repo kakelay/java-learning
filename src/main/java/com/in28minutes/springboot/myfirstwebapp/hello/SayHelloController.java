@@ -65,6 +65,7 @@ public class SayHelloController {
         Locale locale1 = LocaleContextHolder.getLocale();
         
         return messageSource.getMessage( "good.morning.message", null, "Default Message", locale );
+        
 //        return "hello World Internationalized v2";
     }
     
