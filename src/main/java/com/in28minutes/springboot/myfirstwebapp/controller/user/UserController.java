@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.myfirstwebapp.controller;
+package com.in28minutes.springboot.myfirstwebapp.controller.user;
 
 import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
 import com.in28minutes.springboot.myfirstwebapp.dto.response.UserResponse;

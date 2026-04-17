@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.myfirstwebapp.controller;
+package com.in28minutes.springboot.myfirstwebapp.controller.hello;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
