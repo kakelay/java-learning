@@ -2,14 +2,13 @@ package com.in28minutes.springboot.myfirstwebapp.controller.user;
 
 import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
 import com.in28minutes.springboot.myfirstwebapp.dto.response.UserResponse;
-import com.in28minutes.springboot.myfirstwebapp.context.LanguageContext;
 import com.in28minutes.springboot.myfirstwebapp.service.UserService;
 import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Locale;
 import java.util.UUID;
 
 @RestController
@@ -32,13 +31,11 @@ public class UserController {
 
         String ref = generateReference();
 
-        Locale locale = LanguageContext.getLocale();
-
         String msg = messageSource.getMessage(
                 "response.success.message",
                 null,
                 "Default Message",
-                locale
+                LocaleContextHolder.getLocale()
         );
 
         return ResponseEntity.ok(
