@@ -6,12 +6,33 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class VersioningPersonController {
 
-    @GetMapping("v1/person")
+    @GetMapping("/v1/person")
     public PersonV1 getFirstVersionOfPerson(){
         return new PersonV1("Kak Elay");
     }
-    @GetMapping("v2/person")
+
+    @GetMapping("/v2/person")
     public PersonV2 getSecondVersionOfPerson(){
         return new PersonV2(new Name ("Kruy" , "Tharin"));
     }
+
+    @GetMapping(path = "/person",params = "version=1")
+    public PersonV2 getFirstVersionOfPersonRequestParameter(){
+        return new PersonV2(new Name ("Kak" , "MengHour"));
+    }
+
+    @GetMapping(path = "/person",params = "version=2")
+    public PersonV2 getSecondVersionOfPersonRequestParameter(){
+        return new PersonV2(new Name ("Ly" , "MengNgounn"));
+    }
+
+    @GetMapping(path = "/person/header", headers = "X-API-VERSION=1")
+    public PersonV1 getFirstVersionOfPersonRequestHeader(){
+        return new PersonV1("MAK LIN1");
+    }
+    @GetMapping(path = "/person/header", headers = "X-API-VERSION=2")
+    public PersonV1 getSecondVersionOfPersonRequestHeader(){
+        return new PersonV1("MAK LIN2");
+    }
+
 }
