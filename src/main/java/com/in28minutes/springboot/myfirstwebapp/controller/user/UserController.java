@@ -14,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
 import java.util.UUID;
 
 @RestController
@@ -42,7 +43,7 @@ public class UserController {
         String ref = generateReference();
 
         if (tracer != null && tracer.currentSpan() != null) {
-            logger.info("Processing user request with traceId: {}", tracer.currentSpan().context().traceId());
+            logger.info("Processing user request with traceId: {}", Objects.requireNonNull( tracer.currentSpan() ).context().traceId());
         } else {
             logger.info("Processing user request (no tracing available)");
         }
