@@ -4,7 +4,7 @@ This is a demo project for learning Spring Boot, developed by in28minutes.
 
 ## Overview
 
-A simple web application built with Spring Boot that demonstrates essential features including user authentication, todo management, and external service integration.
+A comprehensive web application built with Spring Boot that demonstrates enterprise-level features including a T24-like user management system, authentication, todo management, and external service integration. The application showcases modern Spring Boot development practices with JPA, PostgreSQL, and RESTful API design.
 
 ## Prerequisites
 
@@ -17,11 +17,12 @@ A simple web application built with Spring Boot that demonstrates essential feat
 - Java 17
 - Spring Boot 3.3.4
 - Spring Web MVC
-- Spring Data JDBC
+- Spring Data JPA with Hibernate
+- PostgreSQL Database
 - Spring Boot Actuator
 - Spring Boot Validation
 - Tomcat Embed Jasper (for JSP support)
-- H2 Database
+- H2 Database (alternative)
 - SpringDoc OpenAPI (Swagger UI)
 - Lombok
 - Micrometer Tracing with Zipkin
@@ -68,6 +69,8 @@ Activate a profile by setting `spring.profiles.active` in `application.propertie
 
 ## Features
 
+- **User Management System**: T24-like comprehensive user management with roles, permissions, and profiles
+- **RESTful APIs**: Complete set of user management APIs (get by ID, username, email, list all)
 - User authentication and session management
 - Todo list CRUD operations
 - Internationalization support (English, Chinese, Khmer, Dutch, Vietnamese)
@@ -76,8 +79,20 @@ Activate a profile by setting `spring.profiles.active` in `application.propertie
 - Application monitoring with Spring Boot Actuator
 - Distributed tracing with Zipkin
 - External currency service integration
+- PostgreSQL database integration with JPA
 
 ## API Endpoints
+
+### User Management APIs
+
+- `GET /v1/user` - Get default user information
+- `GET /v1/user/{id}` - Get user by ID
+- `GET /v1/user/username/{username}` - Get user by username
+- `GET /v1/user/email/{email}` - Get user by email address
+- `GET /v1/users` - Get all users
+- `GET /v1/users/active` - Get all active users
+
+### Todo Management APIs
 
 - `GET /login` - Login page
 - `POST /login` - Authenticate user
@@ -88,6 +103,113 @@ Activate a profile by setting `spring.profiles.active` in `application.propertie
 - `GET /delete-todo` - Delete a todo
 - `GET /update-todo` - Update todo form
 - `POST /update-todo` - Update todo
+
+### Testing the APIs
+
+You can test the user management APIs using curl or any HTTP client:
+
+```bash
+# Get user by ID
+curl -X GET "http://localhost:8080/v1/user/1" -H "Content-Type: application/json"
+
+# Get user by username
+curl -X GET "http://localhost:8080/v1/user/username/admin" -H "Content-Type: application/json"
+
+# Get user by email
+curl -X GET "http://localhost:8080/v1/user/email/admin@company.com" -H "Content-Type: application/json"
+
+# Get all users
+curl -X GET "http://localhost:8080/v1/users" -H "Content-Type: application/json"
+
+# Get active users only
+curl -X GET "http://localhost:8080/v1/users/active" -H "Content-Type: application/json"
+```
+
+**Note**: All User Management APIs are GET requests and do not require request bodies. Parameters are passed in the URL path.
+
+### Sample API Responses
+
+#### Get User by ID Response
+
+```json
+{
+  "referenceNumber": "550e8400-e29b-41d4-a716-446655440000",
+  "responseCode": "00",
+  "status": "Success",
+  "message": "User retrieved successfully",
+  "data": {
+    "id": 1,
+    "username": "admin",
+    "email": "admin@company.com",
+    "phone": "+1234567890",
+    "status": "ACTIVE",
+    "createdDate": "2024-01-15T10:30:00Z",
+    "lastLoginDate": "2024-01-20T14:25:00Z",
+    "profile": {
+      "firstName": "System",
+      "lastName": "Administrator",
+      "address": "123 Admin Street",
+      "city": "Admin City",
+      "country": "US",
+      "occupation": "System Administrator"
+    },
+    "preferences": {
+      "theme": "dark",
+      "language": "en",
+      "timezone": "UTC"
+    },
+    "roles": [
+      {
+        "name": "ADMIN",
+        "description": "System Administrator"
+      }
+    ]
+  }
+}
+```
+
+#### Get All Users Response
+
+```json
+{
+  "referenceNumber": "550e8400-e29b-41d4-a716-446655440001",
+  "responseCode": "00",
+  "status": "Success",
+  "message": "Users retrieved successfully",
+  "data": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@company.com",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 2,
+      "username": "john.doe",
+      "email": "john.doe@company.com",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 3,
+      "username": "jane.smith",
+      "email": "jane.smith@company.com",
+      "status": "INACTIVE"
+    }
+  ]
+}
+```
+
+All API responses follow a consistent format:
+
+```json
+{
+  "referenceNumber": "uuid",
+  "responseCode": "00",
+  "status": "Success",
+  "message": "Operation successful",
+  "data": { ... }
+}
+```
 
 ## Database
 
@@ -158,7 +280,7 @@ spring.jpa.show-sql=true
 
 # For schema.sql initialization
 spring.jpa.defer-datasource-initialization=true
-spring.sql.init.mode=always
+spring.sql.init.mode=never
 ```
 
 #### 4. Run the Application
@@ -168,6 +290,32 @@ spring.sql.init.mode=always
 ```
 
 The schema will be automatically created from `src/main/resources/schema.sql`.
+
+## Database Schema
+
+The application uses a comprehensive T24-like user management system with the following entities:
+
+### Core Entities
+
+- **Users**: Basic user information (username, email, phone, status)
+- **User Profiles**: Extended user information (address, occupation, nationality, etc.)
+- **User Preferences**: User settings (theme, language, timezone, notifications)
+- **Roles**: User roles (ADMIN, USER, MANAGER, AUDITOR)
+- **Permissions**: Fine-grained permissions for role-based access control
+- **User Roles**: Many-to-many relationship between users and roles
+- **Password History**: Track password changes for security
+- **User Sessions**: Active user sessions tracking
+- **Audit Log**: Comprehensive audit trail for all operations
+- **Courses**: Learning management system integration
+
+### Sample Data
+
+The application includes sample data for testing:
+
+- **Admin User**: username: `admin`, email: `admin@company.com`
+- **Regular Users**: `john.doe`, `jane.smith`, `sarah.manager`, `tom.auditor`
+- **Roles**: ADMIN, USER, MANAGER, AUDITOR
+- **Permissions**: User management, role management, audit viewing, system configuration
 
 ## Monitoring and Observability
 
