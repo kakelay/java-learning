@@ -229,7 +229,7 @@ public class UserController {
             );
 
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(BaseResponse.error(ref, msg, null));
+                    .body(BaseResponse.error(ref, "E001", msg));
         }
     }
 
@@ -276,7 +276,7 @@ public class UserController {
             );
 
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(BaseResponse.error(ref, msg, null));
+                    .body(BaseResponse.error(ref, "E001", msg));
         }
     }
 }
