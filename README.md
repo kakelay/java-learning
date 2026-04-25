@@ -91,7 +91,83 @@ Activate a profile by setting `spring.profiles.active` in `application.propertie
 
 ## Database
 
-The application uses H2 in-memory database. Schema is defined in `src/main/resources/schema.sql`.
+The application supports both H2 (default) and PostgreSQL databases.
+
+### H2 Database (Default)
+
+The application uses H2 in-memory database by default. Schema is defined in `src/main/resources/schema.sql`.
+
+- H2 Console: http://localhost:8080/h2-console
+- JDBC URL: `jdbc:h2:mem:testdb`
+- Username: `sa`
+- Password: (empty)
+
+### PostgreSQL Database
+
+To use PostgreSQL instead of H2:
+
+#### 1. Install PostgreSQL
+
+Download and install PostgreSQL from [postgresql.org](https://www.postgresql.org/download/) or use Docker:
+
+```bash
+docker run --name postgres -e POSTGRES_PASSWORD=mypassword -d -p 5432:5432 postgres
+```
+
+**Note**: If you get a "port is already allocated" error, check for existing PostgreSQL containers:
+
+```bash
+docker ps -a | findstr postgres
+docker stop <container_name>
+docker rm <container_name>
+```
+
+#### 2. Create Database
+
+```sql
+CREATE DATABASE myfirstwebapp;
+```
+
+Or using Docker exec:
+
+```bash
+docker exec postgres psql -U postgres -c "CREATE DATABASE myfirstwebapp;"
+```
+
+#### 3. Update Configuration
+
+In `src/main/resources/application.properties`, comment out the H2 configuration and uncomment the PostgreSQL configuration:
+
+```properties
+# H2 Configuration (comment out)
+# spring.h2.console.enabled=true
+# spring.h2.console.path=/h2-console
+# spring.datasource.url=jdbc:h2:mem:testdb
+# spring.datasource.driver-class-name=org.h2.Driver
+# spring.datasource.username=sa
+# spring.datasource.password=
+
+# PostgreSQL Configuration (uncomment and update)
+spring.datasource.url=jdbc:postgresql://localhost:5432/myfirstwebapp
+spring.datasource.username=postgres
+spring.datasource.password=your_password_here
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# For schema.sql initialization
+spring.jpa.defer-datasource-initialization=true
+spring.sql.init.mode=always
+```
+
+#### 4. Run the Application
+
+```bash
+./mvnw spring-boot:run
+```
+
+The schema will be automatically created from `src/main/resources/schema.sql`.
 
 ## Monitoring and Observability
 
