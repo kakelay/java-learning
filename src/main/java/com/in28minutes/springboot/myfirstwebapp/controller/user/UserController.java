@@ -2,15 +2,19 @@ package com.in28minutes.springboot.myfirstwebapp.controller.user;
 
 import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
 import com.in28minutes.springboot.myfirstwebapp.common.TraceLogger;
+import com.in28minutes.springboot.myfirstwebapp.dto.request.CreateUserRequest;
+import com.in28minutes.springboot.myfirstwebapp.dto.request.UpdateUserRequest;
 import com.in28minutes.springboot.myfirstwebapp.dto.response.UserResponse;
 import com.in28minutes.springboot.myfirstwebapp.service.UserService;
 import io.micrometer.observation.annotation.Observed;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import jakarta.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -193,5 +197,86 @@ public class UserController {
         return ResponseEntity.ok(
                 BaseResponse.success(ref, msg, users)
         );
+    }
+
+    @PostMapping(value = "/v1/user", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @Observed(name = "user.create", contextualName = "create-user")
+    public ResponseEntity<BaseResponse<UserResponse>> createUser(@Valid @RequestBody CreateUserRequest request) {
+
+        String ref = generateReference();
+
+        traceLogger.logTrace("Processing POST /v1/user request for username: " + request.getUsername());
+
+        try {
+            UserResponse userResponse = userService.createUser(request);
+
+            String msg = messageSource.getMessage(
+                    "response.success.message",
+                    null,
+                    "User created successfully",
+                    LocaleContextHolder.getLocale()
+            );
+
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body(BaseResponse.success(ref, msg, userResponse));
+
+        } catch (RuntimeException e) {
+            String msg = messageSource.getMessage(
+                    "response.error.message",
+                    null,
+                    e.getMessage(),
+                    LocaleContextHolder.getLocale()
+            );
+
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(BaseResponse.error(ref, msg, null));
+        }
+    }
+
+    @PutMapping(value = "/v1/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @Observed(name = "user.update", contextualName = "update-user")
+    public ResponseEntity<BaseResponse<UserResponse>> updateUser(@PathVariable Long id, @Valid @RequestBody UpdateUserRequest request) {
+
+        String ref = generateReference();
+
+        traceLogger.logTrace("Processing PUT /v1/user/" + id + " request");
+
+        try {
+            Optional<UserResponse> userResponse = userService.updateUser(id, request);
+
+            if (userResponse.isPresent()) {
+                String msg = messageSource.getMessage(
+                        "response.success.message",
+                        null,
+                        "User updated successfully",
+                        LocaleContextHolder.getLocale()
+                );
+
+                return ResponseEntity.ok(
+                        BaseResponse.success(ref, msg, userResponse.get())
+                );
+            } else {
+                String msg = messageSource.getMessage(
+                        "response.notfound.message",
+                        null,
+                        "User not found",
+                        LocaleContextHolder.getLocale()
+                );
+
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(BaseResponse.error(ref, msg, null));
+            }
+
+        } catch (RuntimeException e) {
+            String msg = messageSource.getMessage(
+                    "response.error.message",
+                    null,
+                    e.getMessage(),
+                    LocaleContextHolder.getLocale()
+            );
+
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(BaseResponse.error(ref, msg, null));
+        }
     }
 }

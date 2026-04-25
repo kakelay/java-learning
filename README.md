@@ -70,7 +70,7 @@ Activate a profile by setting `spring.profiles.active` in `application.propertie
 ## Features
 
 - **User Management System**: T24-like comprehensive user management with roles, permissions, and profiles
-- **RESTful APIs**: Complete set of user management APIs (get by ID, username, email, list all)
+- **RESTful APIs**: Complete set of user management APIs (get by ID, username, email, list all, create, update)
 - User authentication and session management
 - Todo list CRUD operations
 - Internationalization support (English, Chinese, Khmer, Dutch, Vietnamese)
@@ -91,6 +91,8 @@ Activate a profile by setting `spring.profiles.active` in `application.propertie
 - `GET /v1/user/email/{email}` - Get user by email address
 - `GET /v1/users` - Get all users
 - `GET /v1/users/active` - Get all active users
+- `POST /v1/user` - Create a new user
+- `PUT /v1/user/{id}` - Update an existing user
 
 ### Todo Management APIs
 
@@ -123,9 +125,78 @@ curl -X GET "http://localhost:8080/v1/users" -H "Content-Type: application/json"
 
 # Get active users only
 curl -X GET "http://localhost:8080/v1/users/active" -H "Content-Type: application/json"
+
+# Create a new user
+curl -X POST "http://localhost:8080/v1/user" -H "Content-Type: application/json" -d '{
+  "username": "new.user",
+  "password": "Password123",
+  "email": "new.user@example.com",
+  "phone": "+1234567890",
+  "firstName": "New",
+  "lastName": "User",
+  "theme": "light",
+  "language": "en",
+  "timezone": "UTC"
+}'
+
+# Update an existing user
+curl -X PUT "http://localhost:8080/v1/user/1" -H "Content-Type: application/json" -d '{
+  "email": "updated.email@example.com",
+  "phone": "+1987654321",
+  "city": "New City"
+}'
 ```
 
-**Note**: All User Management APIs are GET requests and do not require request bodies. Parameters are passed in the URL path.
+**Note**: Most User Management APIs are GET requests and do not require request bodies. The new `POST /v1/user` and `PUT /v1/user/{id}` endpoints require JSON request bodies.
+
+### Sample Request Bodies
+
+#### Create User Request (POST /v1/user)
+
+```json
+{
+  "username": "new.user",
+  "password": "Password123",
+  "email": "new.user@example.com",
+  "phone": "+1234567890",
+  "firstName": "New",
+  "lastName": "User",
+  "addressLine1": "123 Main St",
+  "city": "Anytown",
+  "state": "CA",
+  "country": "USA",
+  "zipCode": "12345",
+  "bio": "A new user in the system",
+  "website": "https://example.com",
+  "theme": "light",
+  "language": "en",
+  "timezone": "UTC"
+}
+```
+
+#### Update User Request (PUT /v1/user/{id})
+
+```json
+{
+  "username": "updated.user",
+  "email": "updated.email@example.com",
+  "phone": "+1987654321",
+  "firstName": "Updated",
+  "lastName": "User",
+  "addressLine1": "456 Updated St",
+  "city": "New City",
+  "state": "NY",
+  "country": "USA",
+  "zipCode": "67890",
+  "bio": "Updated bio",
+  "website": "https://updated.com",
+  "theme": "dark",
+  "language": "es",
+  "timezone": "EST",
+  "active": true,
+  "locked": false
+}
+```
 
 ### Sample API Responses
 
