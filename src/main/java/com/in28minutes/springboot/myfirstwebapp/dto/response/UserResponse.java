@@ -24,5 +24,6 @@ public class UserResponse {
     private String coverPic;
     private String bio;
     private String website;
+    private String is_active;
    
 }
