@@ -36,26 +36,6 @@ public class UserController {
                 return UUID.randomUUID().toString();
         }
 
-        // @GetMapping(value = "/v1/user" , produces = MediaType.APPLICATION_JSON_VALUE)
-        // @Observed(name = "user.get", contextualName = "get-user")
-        // public ResponseEntity<BaseResponse<UserResponse>> getUser() {
-        //
-        // String ref = generateReference();
-        //
-        // traceLogger.logTrace("Processing /v1/user request");
-        //
-        // String msg = messageSource.getMessage(
-        // "response.success.message",
-        // null,
-        // "Default Message",
-        // LocaleContextHolder.getLocale()
-        // );
-        //
-        // return ResponseEntity.ok(
-        // BaseResponse.success(ref, msg, userService.getUser())
-        // );
-        // }
-
         @GetMapping(value = "/v1/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
         @Observed(name = "user.getById", contextualName = "get-user-by-id")
         public ResponseEntity<BaseResponse<UserResponse>> getUserById(@PathVariable Long id) {
