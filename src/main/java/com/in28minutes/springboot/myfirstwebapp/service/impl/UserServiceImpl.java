@@ -225,7 +225,8 @@ public class UserServiceImpl implements UserService {
                 .cid(user.getId().toString())
                 .name(user.getUsername())
                 .phone(user.getPhone())
-                .email(user.getEmail());
+                .email(user.getEmail())
+                .isActive(user.getActive()); // 👈 ADD THIS
 
         if (user.getProfile() != null) {
             builder
