@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.myfirstwebapp.controller.user;
+package com.in28minutes.springboot.myfirstwebapp.controller.user.v1;
 
 import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
 import com.in28minutes.springboot.myfirstwebapp.common.TraceLogger;
@@ -20,13 +20,14 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-public class UserController {
+@RequestMapping("/api/user/v1")
+public class UserControllerV1 {
 
         private final MessageSource messageSource;
         private final UserService userService;
         private final TraceLogger traceLogger;
 
-        public UserController(MessageSource messageSource, UserService userService, TraceLogger traceLogger) {
+        public UserControllerV1(MessageSource messageSource, UserService userService, TraceLogger traceLogger) {
                 this.messageSource = messageSource;
                 this.userService = userService;
                 this.traceLogger = traceLogger;
@@ -36,13 +37,13 @@ public class UserController {
                 return UUID.randomUUID().toString();
         }
 
-        @GetMapping(value = "/v1/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+        @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
         @Observed(name = "user.getById", contextualName = "get-user-by-id")
         public ResponseEntity<BaseResponse<UserResponse>> getUserById(@PathVariable Long id) {
 
                 String ref = generateReference();
 
-                traceLogger.logTrace("Processing /v1/user/" + id + " request");
+                traceLogger.logTrace("Processing /api/user/v1/" + id + " request");
 
                 Optional<UserResponse> userResponse = userService.getUserById(id);
 
@@ -65,13 +66,13 @@ public class UserController {
                 }
         }
 
-        @GetMapping(value = "/v1/user/username/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
+        @GetMapping(value = "/username/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
         @Observed(name = "user.getByUsername", contextualName = "get-user-by-username")
         public ResponseEntity<BaseResponse<UserResponse>> getUserByUsername(@PathVariable String username) {
 
                 String ref = generateReference();
 
-                traceLogger.logTrace("Processing /v1/user/username/" + username + " request");
+                traceLogger.logTrace("Processing /api/user/v1/username/" + username + " request");
 
                 Optional<UserResponse> userResponse = userService.getUserByUsername(username);
 
@@ -94,13 +95,13 @@ public class UserController {
                 }
         }
 
-        @GetMapping(value = "/v1/user/email/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
+        @GetMapping(value = "/email/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
         @Observed(name = "user.getByEmail", contextualName = "get-user-by-email")
         public ResponseEntity<BaseResponse<UserResponse>> getUserByEmail(@PathVariable String email) {
 
                 String ref = generateReference();
 
-                traceLogger.logTrace("Processing /v1/user/email/" + email + " request");
+                traceLogger.logTrace("Processing /api/user/v1/email/" + email + " request");
 
                 Optional<UserResponse> userResponse = userService.getUserByEmail(email);
 
@@ -123,13 +124,13 @@ public class UserController {
                 }
         }
 
-        @GetMapping(value = "/v1/users", produces = MediaType.APPLICATION_JSON_VALUE)
+        @GetMapping(value = "/allUser", produces = MediaType.APPLICATION_JSON_VALUE)
         @Observed(name = "user.getAll", contextualName = "get-all-users")
         public ResponseEntity<BaseResponse<List<UserResponse>>> getAllUsers() {
 
                 String ref = generateReference();
 
-                traceLogger.logTrace("Processing /v1/users request");
+                traceLogger.logTrace("Processing /api/user/v1/allUser request");
 
                 List<UserResponse> users = userService.getAllUsers();
 
@@ -143,13 +144,13 @@ public class UserController {
                                 BaseResponse.success(ref, msg, users));
         }
 
-        @GetMapping(value = "/v1/users/active", produces = MediaType.APPLICATION_JSON_VALUE)
+        @GetMapping(value = "/activeUser", produces = MediaType.APPLICATION_JSON_VALUE)
         @Observed(name = "user.getActive", contextualName = "get-active-users")
         public ResponseEntity<BaseResponse<List<UserResponse>>> getActiveUsers() {
 
                 String ref = generateReference();
 
-                traceLogger.logTrace("Processing /v1/users/active request");
+                traceLogger.logTrace("Processing /api/user/v1/activeUser request");
 
                 List<UserResponse> users = userService.getActiveUsers();
 
@@ -163,7 +164,7 @@ public class UserController {
                                 BaseResponse.success(ref, msg, users));
         }
 
-        @PostMapping(value = "/v1/user", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+        @PostMapping(value = "/createUser", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
         @Observed(name = "user.create", contextualName = "create-user")
         public ResponseEntity<BaseResponse<UserResponse>> createUser(
                         @Valid @RequestBody CreateUserRequest request) {
@@ -171,7 +172,7 @@ public class UserController {
                 String ref = generateReference();
 
                 traceLogger.logTrace(
-                                "Processing POST /v1/user request for username: "
+                                "Processing POST /api/user/v1/createUser request for username: "
                                                 + request.getUsername());
 
                 UserResponse userResponse = userService.createUser(request);
@@ -186,14 +187,14 @@ public class UserController {
                                 .body(BaseResponse.success(ref, msg, userResponse));
         }
 
-        @PutMapping(value = "/v1/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+        @PutMapping(value = "/updateUser/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
         @Observed(name = "user.update", contextualName = "update-user")
         public ResponseEntity<BaseResponse<UserResponse>> updateUser(@PathVariable Long id,
                         @Valid @RequestBody UpdateUserRequest request) {
 
                 String ref = generateReference();
 
-                traceLogger.logTrace("Processing PUT /v1/user/" + id + " request");
+                traceLogger.logTrace("Processing PUT /api/user/v1/updateUser/" + id + " request");
 
                 try {
                         Optional<UserResponse> userResponse = userService.updateUser(id, request);

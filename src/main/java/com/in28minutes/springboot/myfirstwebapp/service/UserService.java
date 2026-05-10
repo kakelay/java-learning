@@ -14,7 +14,6 @@ public interface UserService {
     Optional<UserResponse> getUserByEmail(String email);
     List<UserResponse> getAllUsers();
     List<UserResponse> getActiveUsers();
-
     UserResponse createUser(CreateUserRequest request);
     Optional<UserResponse> updateUser(Long id, UpdateUserRequest request);
 }
