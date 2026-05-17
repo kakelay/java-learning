@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.myfirstwebapp.controller.user.v1;
+package com.in28minutes.springboot.myfirstwebapp.controller.user.userControllerV1;
 
 import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
 import com.in28minutes.springboot.myfirstwebapp.common.TraceLogger;
