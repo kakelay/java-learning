@@ -71,6 +71,7 @@ Activate a profile by setting `spring.profiles.active` in `application.propertie
 
 - **User Management System**: T24-like comprehensive user management with roles, permissions, and profiles
 - **RESTful APIs**: Complete set of user management APIs (get by ID, username, email, list all, create, update)
+- **Schema-based management APIs**: user profile, role, permission, and audit log endpoints aligned with `schema.sql`
 - User authentication and session management
 - Todo list CRUD operations
 - Internationalization support (English, Chinese, Khmer, Dutch, Vietnamese)
@@ -93,6 +94,34 @@ Activate a profile by setting `spring.profiles.active` in `application.propertie
 - `GET /v1/users/active` - Get all active users
 - `POST /v1/user` - Create a new user
 - `PUT /v1/user/{id}` - Update an existing user
+
+### Schema-Based APIs
+
+- `GET /api/user-profile/{id}` - Get a user profile by profile ID
+- `GET /api/user-profile/user/{userId}` - Get a user profile by user ID
+- `GET /api/user-profile/cid/{cid}` - Get a user profile by CID
+- `GET /api/user-profile/search?name={name}` - Search user profiles by name
+- `GET /api/user-profile/incomplete` - Get all incomplete user profiles
+- `GET /api/roles/all` - Get all roles
+- `GET /api/roles/active` - Get active roles only
+- `GET /api/roles/{id}` - Get a specific role by ID
+- `GET /api/roles/user/{userId}` - Get roles assigned to a specific user
+- `GET /api/permissions/all` - Get all permissions
+- `GET /api/permissions/{id}` - Get a permission by ID
+- `GET /api/permissions/resource/{resource}` - Get permissions by resource name
+- `GET /api/audit/logs` - Get all audit log entries
+- `GET /api/audit/logs/table/{tableName}` - Get audit log entries for a specific table
+- `GET /api/audit/logs/record/{tableName}/{recordId}` - Get audit trail for a specific record
+- `GET /api/audit/logs/user/{userId}` - Get audit log entries for a specific user
+
+### Schema-Based API Examples
+
+```bash
+curl -X GET "http://localhost:8080/api/user-profile/user/1" -H "Content-Type: application/json"
+curl -X GET "http://localhost:8080/api/roles/all" -H "Content-Type: application/json"
+curl -X GET "http://localhost:8080/api/permissions/resource/USER" -H "Content-Type: application/json"
+curl -X GET "http://localhost:8080/api/audit/logs/table/users" -H "Content-Type: application/json"
+```
 
 ### Todo Management APIs
 
