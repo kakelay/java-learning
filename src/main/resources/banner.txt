@@ -1,0 +1,14 @@
+${AnsiColor.BRIGHT_GREEN}
+██╗  ██╗ █████╗ ██╗  ██╗    ███████╗██╗      █████╗ ██╗   ██╗
+██║ ██╔╝██╔══██╗██║ ██╔╝    ██╔════╝██║     ██╔══██╗╚██╗ ██╔╝
+█████╔╝ ███████║█████╔╝     █████╗  ██║     ███████║ ╚████╔╝
+██╔═██╗ ██╔══██║██╔═██╗     ██╔══╝  ██║     ██╔══██║  ╚██╔╝
+██║  ██╗██║  ██║██║  ██╗    ███████╗███████╗██║  ██║   ██║
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝
+
+${AnsiColor.BRIGHT_YELLOW}Application : ${spring.application.name}
+${AnsiColor.BRIGHT_CYAN}Version     : ${application.version}
+${AnsiColor.BRIGHT_WHITE}Author      : Kak Elay
+${AnsiColor.BRIGHT_MAGENTA}Environment : ${spring.profiles.active:LOCAL}
+${AnsiColor.BRIGHT_GREEN}Status      : STARTED SUCCESSFULLY
+${AnsiColor.DEFAULT}
