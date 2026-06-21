@@ -41,8 +41,8 @@ public class UserProfileController {
     private UserProfileResponse toResponse(UserProfile profile) {
         return UserProfileResponse.builder()
                 .id(profile.getId())
-                .userId(profile.getUser() != null ? profile.getUser().getId() : null)
-                .cid(profile.getCid())
+                .cid(profile.getUser() != null ? profile.getUser().getId().toString() : "")
+//                .cid(profile.getCid())
                 .firstName(profile.getFirstName())
                 .lastName(profile.getLastName())
                 .fullName(profile.getFullName())
