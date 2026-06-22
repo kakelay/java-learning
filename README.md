@@ -56,6 +56,42 @@ Or with a specific profile:
 - Main application: http://localhost:8080
 - Actuator health check: http://localhost:8080/actuator/health
 - Actuator metrics: http://localhost:8080/actuator/metrics
+- Swagger UI: http://localhost:8080/swagger-ui/index.html
+
+## API Authentication
+
+Protected endpoints under `/api/**` require a bearer token. Get a 1-day in-memory token first:
+
+```bash
+curl -X POST "http://localhost:8080/auth/sign-in" \
+  -H "Content-Type: application/json" \
+  -H "apiKey: 937183f3-bd43-46fe-e112-1d5b6f26e580" \
+  -H "partnerId: 868526" \
+  -d '{
+    "username": "apim01",
+    "password": "p$$wkbQwm12sd578!@3w0(q"
+  }'
+```
+
+Use the returned token on API requests:
+
+```bash
+curl -X GET "http://localhost:8080/api/user-profile/1" \
+  -H "Authorization: Bearer <accessToken>"
+```
+
+Swagger UI includes a bearer-token Authorize button. Open `http://localhost:8080/swagger-ui/index.html`, call `/auth/sign-in`, then paste the returned access token into Authorize.
+
+## Request Reference and Logging
+
+Every `/api/**` and `/auth/sign-in` request gets a UUID `referenceNumber`. The same value is used in:
+
+- JSON response body: `referenceNumber`
+- request logs
+- response logs
+- MDC log pattern: `ref=<referenceNumber>`
+
+This makes it easy to search one request from client response back to server logs. HTTP logs include method, path, query string, client IP, status, duration, request body, and response body. Sensitive values such as `Authorization`, `password`, and `accessToken` are masked.
 
 ## Configuration Profiles
 

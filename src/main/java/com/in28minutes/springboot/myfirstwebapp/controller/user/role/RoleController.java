@@ -1,6 +1,7 @@
 package com.in28minutes.springboot.myfirstwebapp.controller.user.role;
 
 import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
+import com.in28minutes.springboot.myfirstwebapp.common.RequestReference;
 import com.in28minutes.springboot.myfirstwebapp.common.TraceLogger;
 import com.in28minutes.springboot.myfirstwebapp.dto.response.RoleResponse;
 import com.in28minutes.springboot.myfirstwebapp.entity.Role;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
@@ -34,7 +34,7 @@ public class RoleController {
     }
 
     private String generateReference() {
-        return UUID.randomUUID().toString();
+        return RequestReference.getOrCreate();
     }
 
     private RoleResponse toResponse(Role role) {

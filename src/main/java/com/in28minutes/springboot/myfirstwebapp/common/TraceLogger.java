@@ -19,10 +19,12 @@ public class TraceLogger {
     }
 
     public void logTrace(String context) {
+        String referenceNumber = RequestReference.getOrCreate();
         if (tracer != null && tracer.currentSpan() != null) {
-            logger.info("{} with traceId: {}", context, Objects.requireNonNull(tracer.currentSpan()).context().traceId());
+            logger.info("{} | referenceNumber={} | traceId={}", context, referenceNumber,
+                    Objects.requireNonNull(tracer.currentSpan()).context().traceId());
         } else {
-            logger.info("{} (no tracing available)", context);
+            logger.info("{} | referenceNumber={} | traceId=not-available", context, referenceNumber);
         }
     }
 }

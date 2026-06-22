@@ -1,6 +1,7 @@
 package com.in28minutes.springboot.myfirstwebapp.controller.audit;
 
 import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
+import com.in28minutes.springboot.myfirstwebapp.common.RequestReference;
 import com.in28minutes.springboot.myfirstwebapp.common.TraceLogger;
 import com.in28minutes.springboot.myfirstwebapp.dto.response.AuditLogResponse;
 import com.in28minutes.springboot.myfirstwebapp.entity.AuditLog;
@@ -13,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @RestController
@@ -33,7 +33,7 @@ public class AuditLogController {
     }
 
     private String generateReference() {
-        return UUID.randomUUID().toString();
+        return RequestReference.getOrCreate();
     }
 
     private AuditLogResponse toResponse(AuditLog auditLog) {

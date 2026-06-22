@@ -1,6 +1,7 @@
 package com.in28minutes.springboot.myfirstwebapp.controller.user.userControllerV1;
 
 import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
+import com.in28minutes.springboot.myfirstwebapp.common.RequestReference;
 import com.in28minutes.springboot.myfirstwebapp.common.TraceLogger;
 import com.in28minutes.springboot.myfirstwebapp.dto.request.CreateUserRequest;
 import com.in28minutes.springboot.myfirstwebapp.dto.request.UpdateUserRequest;
@@ -17,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/user/v1")
@@ -34,7 +34,7 @@ public class UserControllerV1 {
         }
 
         private String generateReference() {
-                return UUID.randomUUID().toString();
+                return RequestReference.getOrCreate();
         }
 
         @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
