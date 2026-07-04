@@ -32,6 +32,8 @@ public class AuthController {
                 request != null ? request.password() : null
         );
         return ResponseEntity.ok(Map.of(
+                "responseCode","00",
+                "message","success get token",
                 "tokenType", "Bearer",
                 "accessToken", token
         ));
