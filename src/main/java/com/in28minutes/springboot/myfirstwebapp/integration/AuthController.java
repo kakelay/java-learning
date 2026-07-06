@@ -1,11 +1,11 @@
 package com.in28minutes.springboot.myfirstwebapp.integration;
 
+import com.in28minutes.springboot.myfirstwebapp.common.BaseResponse;
+import com.in28minutes.springboot.myfirstwebapp.common.RequestReference;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -14,28 +14,47 @@ import java.util.Map;
 public class AuthController {
 
     private final AuthService authService;
+    private final MessageSource messageSource;
 
-    public AuthController(AuthService authService) {
+    public AuthController(AuthService authService, MessageSource messageSource) {
         this.authService = authService;
+        this.messageSource = messageSource;
+    }
+
+    private String generateReference() {
+        return RequestReference.getOrCreate();
     }
 
     @PostMapping("/sign-in")
-    public ResponseEntity<Map<String, String>> signIn(
+    public ResponseEntity<BaseResponse<Map<String, String>>> signIn(
             @RequestHeader(value = "apiKey", required = false) String apiKey,
             @RequestHeader(value = "partnerId", required = false) String partnerId,
             @RequestHeader(value = "partnerid", required = false) String partnerIdLowercase,
             @RequestBody(required = false) SignInRequest request) {
+
+        String ref = generateReference();
+
         String token = authService.issueLocalToken(
                 apiKey,
                 partnerId != null ? partnerId : partnerIdLowercase,
                 request != null ? request.username() : null,
                 request != null ? request.password() : null
         );
-        return ResponseEntity.ok(Map.of(
-                "responseCode","00",
-                "message","success get token",
+
+        String msg = messageSource.getMessage(
+                "response.success.message",
+                null,
+                "Success",
+                LocaleContextHolder.getLocale()
+        );
+
+        Map<String, String> data = Map.of(
                 "tokenType", "Bearer",
                 "accessToken", token
-        ));
+        );
+
+        return ResponseEntity.ok(
+                BaseResponse.success(ref, msg, data)
+        );
     }
 }
