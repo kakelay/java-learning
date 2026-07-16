@@ -36,8 +36,17 @@ public class AccountController {
                                 .id(account.getId())
                                 .accountNo(account.getAccountNo())
                                 .accountName(account.getAccountName())
+                                .accountStatus(account.getStatus() != null ? account.getStatus().name() : null)
                                 .accountType(account.getAccountType())
                                 .accountCode(account.getProductCode())
+                                .currency(account.getCurrency())
+                                .availableBalance(account.getAvailableBalance())
+                                .ledgerBalance(account.getLedgerBalance())
+                                .userId(account.getUser() != null ? account.getUser().getId() : null)
+                                .openDate(account.getOpenDate())
+                                .closeDate(account.getCloseDate())
+                                .createdBy(account.getCreatedBy())
+                                .updatedBy(account.getUpdatedBy())
                                 .build();
         }
 
@@ -51,6 +60,63 @@ public class AccountController {
                                 "Processing /api/accounts/cid/" + userId + " request");
 
                 List<Account> accounts = accountRepository.findByUser_Id(userId);
+                List<AccountResponse> accountResponses = accounts.stream()
+                                .map(this::toResponse)
+                                .toList();
+
+                if (accountResponses.isEmpty()) {
+
+                        String msg = messageSource.getMessage(
+                                        "response.notfound.message",
+                                        null,
+                                        "Account not found",
+                                        LocaleContextHolder.getLocale());
+
+                        return ResponseEntity.ok(
+                                        BaseResponse.success(ref, msg, null));
+                }
+
+                String msg = messageSource.getMessage(
+                                "response.success.message",
+                                null,
+                                "Accounts retrieved successfully",
+                                LocaleContextHolder.getLocale());
+
+                return ResponseEntity.ok(
+                                BaseResponse.success(ref, msg, accountResponses));
+        }
+
+        @GetMapping("/detail")
+        public ResponseEntity<?> getAllAccountsDetail(
+                        @RequestParam(required = false) String accountNo) {
+
+                String ref = generateReference();
+
+                traceLogger.logTrace("Processing /api/accounts/detail request");
+
+                if (accountNo != null && !accountNo.isBlank()) {
+                        var accountOpt = accountRepository.findByAccountNo(accountNo);
+                        if (accountOpt.isPresent()) {
+                                AccountResponse resp = toResponse(accountOpt.get());
+                                String msg = messageSource.getMessage(
+                                                "response.success.message",
+                                                null,
+                                                "Account retrieved successfully",
+                                                LocaleContextHolder.getLocale());
+                                return ResponseEntity.ok(
+                                                BaseResponse.success(ref, msg, resp));
+                        } else {
+                                String msg = messageSource.getMessage(
+                                                "response.notfound.message",
+                                                null,
+                                                "Account not found",
+                                                LocaleContextHolder.getLocale());
+                                return ResponseEntity.ok(
+                                                BaseResponse.success(ref, msg, null));
+                        }
+                }
+
+                List<Account> accounts = accountRepository.findAll();
                 List<AccountResponse> accountResponses = accounts.stream()
                                 .map(this::toResponse)
                                 .toList();

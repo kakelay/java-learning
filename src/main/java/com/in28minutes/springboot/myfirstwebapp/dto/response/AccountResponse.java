@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Getter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Getter
 @Builder
@@ -35,20 +36,33 @@ public class AccountResponse {
     private BigDecimal availableBalance;
 
     private BigDecimal ledgerBalance;
+    private Long userId;
 
+    private LocalDate openDate;
 
-    private AccountResponse toResponse(Account account){
+    private LocalDate closeDate;
+
+    private String createdBy;
+
+    private String updatedBy;
+
+    private AccountResponse toResponse(Account account) {
 
         return AccountResponse.builder()
                 .id(account.getId())
                 .accountNo(account.getAccountNo())
                 .accountName(account.getAccountName())
-                .accountStatus(account.getStatus().name())
+                .accountStatus(account.getStatus() != null ? account.getStatus().name() : null)
                 .accountType(account.getAccountType())
                 .accountCode(account.getProductCode())
                 .currency(account.getCurrency())
                 .availableBalance(account.getAvailableBalance())
                 .ledgerBalance(account.getLedgerBalance())
+                .userId(account.getUser() != null ? account.getUser().getId() : null)
+                .openDate(account.getOpenDate())
+                .closeDate(account.getCloseDate())
+                .createdBy(account.getCreatedBy())
+                .updatedBy(account.getUpdatedBy())
                 .build();
     }
 
