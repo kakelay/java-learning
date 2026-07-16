@@ -2,7 +2,7 @@
 -- Comprehensive user information storage with relationships
 
 -- Users table (main authentication table)
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     id BIGSERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE users (
 );
 
 -- Roles table (RBAC - Role Based Access Control)
-CREATE TABLE roles (
+CREATE TABLE IF NOT EXISTS roles (
     id BIGSERIAL PRIMARY KEY,
     role_name VARCHAR(50) UNIQUE NOT NULL,
     role_description VARCHAR(255),
@@ -32,7 +32,7 @@ CREATE TABLE roles (
 );
 
 -- User Roles junction table (many-to-many relationship)
-CREATE TABLE user_roles (
+CREATE TABLE IF NOT EXISTS user_roles (
     id BIGSERIAL PRIMARY KEY,
     user_id BIGINT NOT NULL,
     role_id BIGINT NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE user_roles (
 );
 
 -- User Profiles table (extended user information)
-CREATE TABLE user_profiles (
+CREATE TABLE IF NOT EXISTS user_profiles (
     id BIGSERIAL PRIMARY KEY,
     user_id BIGINT UNIQUE NOT NULL,
     cid VARCHAR(20) UNIQUE, -- Customer ID like T24
@@ -87,7 +87,7 @@ CREATE TABLE user_profiles (
 );
 
 -- Permissions table (fine-grained permissions)
-CREATE TABLE permissions (
+CREATE TABLE IF NOT EXISTS permissions (
     id BIGSERIAL PRIMARY KEY,
     permission_name VARCHAR(100) UNIQUE NOT NULL,
     permission_description VARCHAR(255),
@@ -98,7 +98,7 @@ CREATE TABLE permissions (
 );
 
 -- Role Permissions junction table
-CREATE TABLE role_permissions (
+CREATE TABLE IF NOT EXISTS role_permissions (
     id BIGSERIAL PRIMARY KEY,
     role_id BIGINT NOT NULL,
     permission_id BIGINT NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE role_permissions (
 );
 
 -- Audit Log table (comprehensive audit trail like T24)
-CREATE TABLE audit_log (
+CREATE TABLE IF NOT EXISTS audit_log (
     id BIGSERIAL PRIMARY KEY,
     table_name VARCHAR(100) NOT NULL,
     record_id BIGINT,
@@ -130,7 +130,7 @@ CREATE TABLE audit_log (
 );
 
 -- User Sessions table (track active sessions)
-CREATE TABLE user_sessions (
+CREATE TABLE IF NOT EXISTS user_sessions (
     id BIGSERIAL PRIMARY KEY,
     user_id BIGINT NOT NULL,
     session_id VARCHAR(255) UNIQUE NOT NULL,
@@ -145,7 +145,7 @@ CREATE TABLE user_sessions (
 );
 
 -- Password History table (security requirement)
-CREATE TABLE password_history (
+CREATE TABLE IF NOT EXISTS password_history (
     id BIGSERIAL PRIMARY KEY,
     user_id BIGINT NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
@@ -155,7 +155,7 @@ CREATE TABLE password_history (
 );
 
 -- User Preferences table
-CREATE TABLE user_preferences (
+CREATE TABLE IF NOT EXISTS user_preferences (
     id BIGSERIAL PRIMARY KEY,
     user_id BIGINT UNIQUE NOT NULL,
     theme VARCHAR(20) DEFAULT 'light',
@@ -175,7 +175,7 @@ CREATE TABLE user_preferences (
 );
 
 -- Course table (existing table, keeping for compatibility)
-CREATE TABLE course (
+CREATE TABLE IF NOT EXISTS course (
     id BIGINT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     author VARCHAR(255) NOT NULL,
@@ -192,105 +192,95 @@ CREATE TABLE course (
 );
 
 -- Indexes for performance
-CREATE INDEX idx_users_username ON users(username);
-CREATE INDEX idx_users_email ON users(email);
-CREATE INDEX idx_users_phone ON users(phone);
-CREATE INDEX idx_user_profiles_cid ON user_profiles(cid);
-CREATE INDEX idx_user_profiles_user_id ON user_profiles(user_id);
-CREATE INDEX idx_user_roles_user_id ON user_roles(user_id);
-CREATE INDEX idx_user_roles_role_id ON user_roles(role_id);
-CREATE INDEX idx_audit_log_table_record ON audit_log(table_name, record_id);
-CREATE INDEX idx_audit_log_user_timestamp ON audit_log(user_id, operation_timestamp);
-CREATE INDEX idx_user_sessions_user_id ON user_sessions(user_id);
-CREATE INDEX idx_user_sessions_session_id ON user_sessions(session_id);
+CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
+CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
+CREATE INDEX IF NOT EXISTS idx_users_phone ON users(phone);
+CREATE INDEX IF NOT EXISTS idx_user_profiles_cid ON user_profiles(cid);
+CREATE INDEX IF NOT EXISTS idx_user_profiles_user_id ON user_profiles(user_id);
+CREATE INDEX IF NOT EXISTS idx_user_roles_user_id ON user_roles(user_id);
+CREATE INDEX IF NOT EXISTS idx_user_roles_role_id ON user_roles(role_id);
+CREATE INDEX IF NOT EXISTS idx_audit_log_table_record ON audit_log(table_name, record_id);
+CREATE INDEX IF NOT EXISTS idx_audit_log_user_timestamp ON audit_log(user_id, operation_timestamp);
+CREATE INDEX IF NOT EXISTS idx_user_sessions_user_id ON user_sessions(user_id);
+CREATE INDEX IF NOT EXISTS idx_user_sessions_session_id ON user_sessions(session_id);
 
 -- Insert default roles
-INSERT INTO roles (role_name, role_description, created_by) VALUES
-('ADMIN', 'System Administrator with full access', 'SYSTEM'),
-('USER', 'Regular user with basic access', 'SYSTEM'),
-('MANAGER', 'Manager with elevated permissions', 'SYSTEM'),
-('AUDITOR', 'Audit and compliance role', 'SYSTEM');
+INSERT INTO roles (role_name, role_description, created_by)
+VALUES
+    ('ADMIN', 'System Administrator with full access', 'SYSTEM'),
+    ('USER', 'Regular user with basic access', 'SYSTEM'),
+    ('MANAGER', 'Manager with elevated permissions', 'SYSTEM'),
+    ('AUDITOR', 'Audit and compliance role', 'SYSTEM')
+ON CONFLICT (role_name) DO NOTHING;
 
 -- Insert default permissions
-INSERT INTO permissions (permission_name, permission_description, resource, action) VALUES
-('USER_CREATE', 'Create new users', 'USER', 'CREATE'),
-('USER_READ', 'View user information', 'USER', 'READ'),
-('USER_UPDATE', 'Update user information', 'USER', 'UPDATE'),
-('USER_DELETE', 'Delete users', 'USER', 'DELETE'),
-('ROLE_MANAGE', 'Manage user roles', 'ROLE', 'MANAGE'),
-('AUDIT_VIEW', 'View audit logs', 'AUDIT', 'READ'),
-('SYSTEM_CONFIG', 'System configuration access', 'SYSTEM', 'CONFIGURE');
+INSERT INTO permissions (permission_name, permission_description, resource, action)
+VALUES
+    ('USER_CREATE', 'Create new users', 'USER', 'CREATE'),
+    ('USER_READ', 'View user information', 'USER', 'READ'),
+    ('USER_UPDATE', 'Update user information', 'USER', 'UPDATE'),
+    ('USER_DELETE', 'Delete users', 'USER', 'DELETE'),
+    ('ROLE_MANAGE', 'Manage user roles', 'ROLE', 'MANAGE'),
+    ('AUDIT_VIEW', 'View audit logs', 'AUDIT', 'READ'),
+    ('SYSTEM_CONFIG', 'System configuration access', 'SYSTEM', 'CONFIGURE')
+ON CONFLICT (permission_name) DO NOTHING;
 
 -- Assign permissions to roles
-INSERT INTO role_permissions (role_id, permission_id, granted_by) VALUES
-(1, 1, 'SYSTEM'), -- ADMIN can create users
-(1, 2, 'SYSTEM'), -- ADMIN can read users
-(1, 3, 'SYSTEM'), -- ADMIN can update users
-(1, 4, 'SYSTEM'), -- ADMIN can delete users
-(1, 5, 'SYSTEM'), -- ADMIN can manage roles
-(1, 6, 'SYSTEM'), -- ADMIN can view audit
-(1, 7, 'SYSTEM'), -- ADMIN can configure system
-(2, 2, 'SYSTEM'), -- USER can read users (own profile)
-(2, 3, 'SYSTEM'), -- USER can update users (own profile)
-(3, 1, 'SYSTEM'), -- MANAGER can create users
-(3, 2, 'SYSTEM'), -- MANAGER can read users
-(3, 3, 'SYSTEM'), -- MANAGER can update users
-(4, 6, 'SYSTEM'); -- AUDITOR can view audit logs
+INSERT INTO role_permissions (role_id, permission_id, granted_by)
+SELECT r.id, p.id, 'SYSTEM'
+FROM roles r
+JOIN permissions p ON (
+    (r.role_name = 'ADMIN' AND p.permission_name IN ('USER_CREATE','USER_READ','USER_UPDATE','USER_DELETE','ROLE_MANAGE','AUDIT_VIEW','SYSTEM_CONFIG'))
+    OR (r.role_name = 'USER' AND p.permission_name IN ('USER_READ','USER_UPDATE'))
+    OR (r.role_name = 'MANAGER' AND p.permission_name IN ('USER_CREATE','USER_READ','USER_UPDATE'))
+    OR (r.role_name = 'AUDITOR' AND p.permission_name IN ('AUDIT_VIEW'))
+)
+ON CONFLICT (role_id, permission_id) DO NOTHING;
 
--- Create audit trigger function
-CREATE OR REPLACE FUNCTION audit_trigger_function() RETURNS TRIGGER AS $$
-DECLARE
-    old_row JSONB;
-    new_row JSONB;
-    changed_fields TEXT[] := ARRAY[]::TEXT[];
-BEGIN
-    -- Convert OLD and NEW to JSONB
-    old_row := CASE WHEN TG_OP != 'INSERT' THEN row_to_json(OLD)::JSONB ELSE NULL END;
-    new_row := CASE WHEN TG_OP != 'DELETE' THEN row_to_json(NEW)::JSONB ELSE NULL END;
+-- Audit trigger function and triggers are skipped during boot initialization
+-- to keep schema startup compatible with Spring Boot's SQL script parser.
+-- They can be added manually later in a PostgreSQL client if audit logging is needed.
 
-    -- For UPDATE, identify changed fields
-    IF TG_OP = 'UPDATE' THEN
-        SELECT array_agg(key)
-        INTO changed_fields
-        FROM jsonb_object_keys(old_row - new_row) AS key
-        WHERE old_row -> key != new_row -> key;
-    END IF;
 
-    -- Insert audit record
-    INSERT INTO audit_log (
-        table_name,
-        record_id,
-        operation,
-        old_values,
-        new_values,
-        changed_fields,
-        user_id,
-        username
-    ) VALUES (
-        TG_TABLE_NAME,
-        CASE WHEN TG_OP = 'DELETE' THEN (old_row ->> 'id')::BIGINT
-             ELSE (new_row ->> 'id')::BIGINT END,
-        TG_OP,
-        old_row,
-        new_row,
-        changed_fields,
-        NULL, -- Will be set by application context
-        current_setting('app.current_user', true) -- Application sets this
-    );
+-- Create accounts table (child table of users)
+-- One user can have multiple accounts (1:N relationship)
 
-    RETURN CASE WHEN TG_OP = 'DELETE' THEN OLD ELSE NEW END;
-END;
-$$ LANGUAGE plpgsql;
+CREATE TABLE IF NOT EXISTS accounts (
+                          id BIGSERIAL PRIMARY KEY,
 
--- Create audit triggers for key tables
-CREATE TRIGGER audit_users_trigger
-    AFTER INSERT OR UPDATE OR DELETE ON users
-    FOR EACH ROW EXECUTE FUNCTION audit_trigger_function();
+                          account_no VARCHAR(30) UNIQUE NOT NULL,
+                          account_name VARCHAR(100) NOT NULL,
 
-CREATE TRIGGER audit_user_profiles_trigger
-    AFTER INSERT OR UPDATE OR DELETE ON user_profiles
-    FOR EACH ROW EXECUTE FUNCTION audit_trigger_function();
+                          account_type VARCHAR(50) NOT NULL,       -- SAVINGS, CURRENT, LOAN, FD
+                          product_code VARCHAR(10),                -- 6001, 6002...
+                          currency VARCHAR(3) NOT NULL,            -- USD, KHR
 
-CREATE TRIGGER audit_user_roles_trigger
-    AFTER INSERT OR UPDATE OR DELETE ON user_roles
-    FOR EACH ROW EXECUTE FUNCTION audit_trigger_function();
+                          available_balance DECIMAL(18,2) DEFAULT 0.00
+                              CHECK (available_balance >= 0),
+
+                          ledger_balance DECIMAL(18,2) DEFAULT 0.00,
+
+                          status VARCHAR(20) DEFAULT 'ACTIVE'
+                              CHECK (status IN ('ACTIVE', 'INACTIVE', 'DORMANT', 'CLOSED', 'BLOCKED')),
+
+                          open_date DATE DEFAULT CURRENT_DATE,
+                          close_date DATE,
+
+                          user_id BIGINT NOT NULL,
+
+                          created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                          updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                          created_by VARCHAR(50),
+                          updated_by VARCHAR(50),
+
+                          CONSTRAINT fk_account_user
+                              FOREIGN KEY (user_id)
+                                  REFERENCES users(id)
+                                  ON DELETE CASCADE
+);
+
+CREATE INDEX IF NOT EXISTS idx_accounts_user_id
+    ON accounts(user_id);
+
+CREATE INDEX IF NOT EXISTS idx_accounts_account_no
+    ON accounts(account_no);

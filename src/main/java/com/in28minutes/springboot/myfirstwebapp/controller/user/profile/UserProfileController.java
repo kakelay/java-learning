@@ -42,7 +42,7 @@ public class UserProfileController {
         return UserProfileResponse.builder()
                 .id(profile.getId())
                 .cid(profile.getUser() != null ? profile.getUser().getId().toString() : "")
-//                .cid(profile.getCid())
+                .cid(profile.getCid())
                 .firstName(profile.getFirstName())
                 .lastName(profile.getLastName())
                 .fullName(profile.getFullName())

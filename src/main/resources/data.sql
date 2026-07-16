@@ -28,12 +28,16 @@ ON CONFLICT (username) DO NOTHING;
 
 -- Insert admin profile
 INSERT INTO user_profiles (user_id, cid, first_name, last_name, phone, preferred_language, is_profile_complete, created_by)
-VALUES (1, 'CID001', 'System', 'Administrator', '+1234567890', 'en', true, 'SYSTEM')
+SELECT u.id, 'CID001', 'System', 'Administrator', '+1234567890', 'en', true, 'SYSTEM'
+FROM users u
+WHERE u.username = 'admin'
 ON CONFLICT (user_id) DO NOTHING;
 
 -- Insert admin preferences
 INSERT INTO user_preferences (user_id, theme, language, timezone, email_notifications, items_per_page)
-VALUES (1, 'dark', 'en', 'UTC', true, 20)
+SELECT u.id, 'dark', 'en', 'UTC', true, 20
+FROM users u
+WHERE u.username = 'admin'
 ON CONFLICT (user_id) DO NOTHING;
 
 -- Insert sample user
@@ -43,18 +47,29 @@ ON CONFLICT (username) DO NOTHING;
 
 -- Insert sample user profile
 INSERT INTO user_profiles (user_id, cid, first_name, last_name, date_of_birth, gender, address_line1, city, state, country, zip_code, phone, occupation, company, nationality, marital_status, preferred_language, is_profile_complete, created_by)
-VALUES (2, 'CID002', 'John', 'Doe', '1990-05-15', 'Male', '123 Main Street', 'New York', 'NY', 'USA', '10001', '+1987654321', 'Software Engineer', 'Tech Corp', 'American', 'Single', 'en', true, 'SYSTEM')
+SELECT u.id, 'CID002', 'John', 'Doe', '1990-05-15', 'Male', '123 Main Street', 'New York', 'NY', 'USA', '10001', '+1987654321', 'Software Engineer', 'Tech Corp', 'American', 'Single', 'en', true, 'SYSTEM'
+FROM users u
+WHERE u.username = 'john.doe'
 ON CONFLICT (user_id) DO NOTHING;
 
 -- Insert sample user preferences
 INSERT INTO user_preferences (user_id, theme, language, timezone, email_notifications, sms_notifications, currency, items_per_page)
-VALUES (2, 'light', 'en', 'America/New_York', true, false, 'USD', 10)
+SELECT u.id, 'light', 'en', 'America/New_York', true, false, 'USD', 10
+FROM users u
+WHERE u.username = 'john.doe'
 ON CONFLICT (user_id) DO NOTHING;
 
 -- Assign roles to users
 INSERT INTO user_roles (user_id, role_id)
-VALUES (1, 1), -- Admin gets ADMIN role
-       (2, 2)
+SELECT admin_user.id, admin_role.id
+FROM users admin_user
+JOIN roles admin_role ON admin_role.role_name = 'ADMIN'
+WHERE admin_user.username = 'admin'
+UNION ALL
+SELECT sample_user.id, user_role.id
+FROM users sample_user
+JOIN roles user_role ON user_role.role_name = 'USER'
+WHERE sample_user.username = 'john.doe'
 ON CONFLICT (user_id, role_id) DO NOTHING;
 
 -- Insert sample courses
@@ -83,36 +98,82 @@ INSERT INTO users (username, password, email, phone, is_active, created_by) VALU
 ('tom.auditor', '$2a$10$8K2L0Hkd1Jc8Q8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8', 'tom.auditor@company.com', '+14255550103', true, 'SYSTEM')
 ON CONFLICT DO NOTHING;
 
-INSERT INTO user_profiles (user_id, cid, first_name, last_name, date_of_birth, gender, address_line1, city, state, country, zip_code, phone, occupation, company, nationality, marital_status, preferred_language, is_profile_complete, created_by) VALUES (3, 'CID003', 'Jane', 'Smith', '1988-11-30', 'Female', '221B Baker Street', 'London', 'Greater London', 'UK', 'NW1 6XE', '+442071234567', 'Product Manager', 'Global Solutions', 'British', 'Married', 'en', true, 'SYSTEM') ON CONFLICT (user_id) DO NOTHING;
-INSERT INTO user_profiles (user_id, cid, first_name, last_name, date_of_birth, gender, address_line1, city, state, country, zip_code, phone, occupation, company, nationality, marital_status, preferred_language, is_profile_complete, created_by) VALUES (4, 'CID004', 'Sarah', 'Manager', '1985-07-24', 'Female', '456 Market Street', 'San Francisco', 'CA', 'USA', '94105', '+14155550102', 'Operations Manager', 'Enterprise Co', 'American', 'Married', 'en', true, 'SYSTEM') ON CONFLICT (user_id) DO NOTHING;
-INSERT INTO user_profiles (user_id, cid, first_name, last_name, date_of_birth, gender, address_line1, city, state, country, zip_code, phone, occupation, company, nationality, marital_status, preferred_language, is_profile_complete, created_by) VALUES (5, 'CID005', 'Tom', 'Auditor', '1992-03-10', 'Male', '789 Audit Avenue', 'Chicago', 'IL', 'USA', '60601', '+13125550103', 'Compliance Auditor', 'AuditCorp', 'American', 'Single', 'en', true, 'SYSTEM') ON CONFLICT (user_id) DO NOTHING;
+INSERT INTO user_profiles (user_id, cid, first_name, last_name, date_of_birth, gender, address_line1, city, state, country, zip_code, phone, occupation, company, nationality, marital_status, preferred_language, is_profile_complete, created_by)
+SELECT u.id, 'CID003', 'Jane', 'Smith', '1988-11-30', 'Female', '221B Baker Street', 'London', 'Greater London', 'UK', 'NW1 6XE', '+442071234567', 'Product Manager', 'Global Solutions', 'British', 'Married', 'en', true, 'SYSTEM'
+FROM users u
+WHERE u.username = 'jane.smith'
+ON CONFLICT (user_id) DO NOTHING;
 
-INSERT INTO user_preferences (user_id, theme, language, timezone, email_notifications, sms_notifications, currency, items_per_page) VALUES
-(3, 'light', 'en', 'Europe/London', true, false, 'GBP', 15),
-(4, 'dark', 'en', 'America/Los_Angeles', true, true, 'USD', 20),
-(5, 'light', 'en', 'America/Chicago', false, true, 'USD', 10)
+INSERT INTO user_profiles (user_id, cid, first_name, last_name, date_of_birth, gender, address_line1, city, state, country, zip_code, phone, occupation, company, nationality, marital_status, preferred_language, is_profile_complete, created_by)
+SELECT u.id, 'CID004', 'Sarah', 'Manager', '1985-07-24', 'Female', '456 Market Street', 'San Francisco', 'CA', 'USA', '94105', '+14155550102', 'Operations Manager', 'Enterprise Co', 'American', 'Married', 'en', true, 'SYSTEM'
+FROM users u
+WHERE u.username = 'sarah.manager'
+ON CONFLICT (user_id) DO NOTHING;
+
+INSERT INTO user_profiles (user_id, cid, first_name, last_name, date_of_birth, gender, address_line1, city, state, country, zip_code, phone, occupation, company, nationality, marital_status, preferred_language, is_profile_complete, created_by)
+SELECT u.id, 'CID005', 'Tom', 'Auditor', '1992-03-10', 'Male', '789 Audit Avenue', 'Chicago', 'IL', 'USA', '60601', '+13125550103', 'Compliance Auditor', 'AuditCorp', 'American', 'Single', 'en', true, 'SYSTEM'
+FROM users u
+WHERE u.username = 'tom.auditor'
+ON CONFLICT (user_id) DO NOTHING;
+
+INSERT INTO user_preferences (user_id, theme, language, timezone, email_notifications, sms_notifications, currency, items_per_page)
+SELECT u.id, 'light', 'en', 'Europe/London', true, false, 'GBP', 15
+FROM users u
+WHERE u.username = 'jane.smith'
+ON CONFLICT (user_id) DO NOTHING;
+
+INSERT INTO user_preferences (user_id, theme, language, timezone, email_notifications, sms_notifications, currency, items_per_page)
+SELECT u.id, 'dark', 'en', 'America/Los_Angeles', true, true, 'USD', 20
+FROM users u
+WHERE u.username = 'sarah.manager'
+ON CONFLICT (user_id) DO NOTHING;
+
+INSERT INTO user_preferences (user_id, theme, language, timezone, email_notifications, sms_notifications, currency, items_per_page)
+SELECT u.id, 'light', 'en', 'America/Chicago', false, true, 'USD', 10
+FROM users u
+WHERE u.username = 'tom.auditor'
 ON CONFLICT (user_id) DO NOTHING;
 
 -- Assign additional roles to users
 INSERT INTO user_roles (user_id, role_id)
-VALUES
-(3, 2), -- Jane gets USER role
-(4, 3), -- Sarah gets MANAGER role
-(5, 4)
+SELECT u.id, r.id
+FROM users u
+JOIN roles r ON r.role_name = 'USER'
+WHERE u.username = 'jane.smith'
+UNION ALL
+SELECT u.id, r.id
+FROM users u
+JOIN roles r ON r.role_name = 'MANAGER'
+WHERE u.username = 'sarah.manager'
+UNION ALL
+SELECT u.id, r.id
+FROM users u
+JOIN roles r ON r.role_name = 'AUDITOR'
+WHERE u.username = 'tom.auditor'
 ON CONFLICT (user_id, role_id) DO NOTHING;
 
 -- Insert sample sessions
-INSERT INTO user_sessions (user_id, session_id, ip_address, user_agent, device_info, login_time, last_activity, expiry_time, is_active) VALUES
-(2, 'sess-1001', '192.168.1.10', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', '{"device":"desktop","browser":"chrome"}', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP + INTERVAL '8 hours', true),
-(3, 'sess-1002', '51.140.20.33', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)', '{"device":"laptop","browser":"safari"}', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP + INTERVAL '8 hours', true),
-(4, 'sess-1003', '34.201.33.44', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', '{"device":"laptop","browser":"firefox"}', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP + INTERVAL '8 hours', true)
+INSERT INTO user_sessions (user_id, session_id, ip_address, user_agent, device_info, login_time, last_activity, expiry_time, is_active)
+SELECT u.id, 'sess-1001', '192.168.1.10', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', '{"device":"desktop","browser":"chrome"}'::jsonb, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP + INTERVAL '8 hours', true
+FROM users u WHERE u.username = 'john.doe'
+UNION ALL
+SELECT u.id, 'sess-1002', '51.140.20.33', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)', '{"device":"laptop","browser":"safari"}'::jsonb, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP + INTERVAL '8 hours', true
+FROM users u WHERE u.username = 'jane.smith'
+UNION ALL
+SELECT u.id, 'sess-1003', '34.201.33.44', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', '{"device":"laptop","browser":"firefox"}'::jsonb, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP + INTERVAL '8 hours', true
+FROM users u WHERE u.username = 'sarah.manager'
 ON CONFLICT (session_id) DO NOTHING;
 
 -- Insert password history
-INSERT INTO password_history (user_id, password_hash, changed_by) VALUES
-(1, '$2a$10$8K2L0Hkd1Jc8Q8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8', 'SYSTEM'),
-(2, '$2a$10$8K2L0Hkd1Jc8Q8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8', 'SYSTEM'),
-(3, '$2a$10$8K2L0Hkd1Jc8Q8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8', 'SYSTEM');
+INSERT INTO password_history (user_id, password_hash, changed_by)
+SELECT u.id, '$2a$10$8K2L0Hkd1Jc8Q8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8', 'SYSTEM'
+FROM users u WHERE u.username = 'admin'
+UNION ALL
+SELECT u.id, '$2a$10$8K2L0Hkd1Jc8Q8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8', 'SYSTEM'
+FROM users u WHERE u.username = 'john.doe'
+UNION ALL
+SELECT u.id, '$2a$10$8K2L0Hkd1Jc8Q8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8Y8', 'SYSTEM'
+FROM users u WHERE u.username = 'jane.smith';
 
 -- Insert additional audit log entries
 INSERT INTO audit_log (table_name, record_id, operation, username, operation_timestamp) VALUES
@@ -125,3 +186,111 @@ INSERT INTO audit_log (table_name, record_id, operation, username, operation_tim
 ('user_preferences', 3, 'INSERT', 'SYSTEM', CURRENT_TIMESTAMP),
 ('user_preferences', 4, 'INSERT', 'SYSTEM', CURRENT_TIMESTAMP),
 ('user_preferences', 5, 'INSERT', 'SYSTEM', CURRENT_TIMESTAMP);
+
+
+--- Insert data accounts user for testing
+
+INSERT INTO accounts (
+    account_no,
+    account_name,
+    account_type,
+    product_code,
+    currency,
+    available_balance,
+    ledger_balance,
+    status,
+    open_date,
+    user_id,
+    created_by,
+    updated_by
+)
+VALUES
+
+-- User 1 : Admin Customer (3 accounts)
+('AMK00000001', 'Admin Saving USD', 'SAVINGS', '6001', 'USD',
+ 5000.00, 5000.00, 'ACTIVE', CURRENT_DATE, 1, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000002', 'Admin Saving KHR', 'SAVINGS', '6001', 'KHR',
+ 2000000.00, 2000000.00, 'ACTIVE', CURRENT_DATE, 1, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000003', 'Admin Current Account', 'CURRENT', '6002', 'USD',
+ 10000.00, 10000.00, 'ACTIVE', CURRENT_DATE, 1, 'SYSTEM', 'SYSTEM'),
+
+
+-- User 2 (2 accounts)
+('AMK00000004', 'Kakelay Saving USD', 'SAVINGS', '6001', 'USD',
+ 1500.00, 1500.00, 'ACTIVE', CURRENT_DATE, 2, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000005', 'Kakelay Fixed Deposit', 'FD', '6003', 'USD',
+ 5000.00, 5000.00, 'ACTIVE', CURRENT_DATE, 2, 'SYSTEM', 'SYSTEM'),
+
+
+-- User 3 (3 accounts)
+('AMK00000006', 'Menghour Saving USD', 'SAVINGS', '6001', 'USD',
+ 3000.00, 3000.00, 'ACTIVE', CURRENT_DATE, 3, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000007', 'Menghour Saving KHR', 'SAVINGS', '6001', 'KHR',
+ 800000.00, 800000.00, 'ACTIVE', CURRENT_DATE, 3, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000008', 'Menghour Loan Account', 'LOAN', '6004', 'USD',
+ 0.00, 15000.00, 'ACTIVE', CURRENT_DATE, 3, 'SYSTEM', 'SYSTEM'),
+
+
+-- User 4 (2 accounts)
+('AMK00000009', 'Ousing Saving USD', 'SAVINGS', '6001', 'USD',
+ 2500.00, 2500.00, 'ACTIVE', CURRENT_DATE, 4, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000010', 'Ousing Current USD', 'CURRENT', '6002', 'USD',
+ 6000.00, 6000.00, 'ACTIVE', CURRENT_DATE, 4, 'SYSTEM', 'SYSTEM'),
+
+
+-- User 5 (2 accounts)
+('AMK00000011', 'Channithona Saving USD', 'SAVINGS', '6001', 'USD',
+ 1200.00, 1200.00, 'INACTIVE', CURRENT_DATE, 5, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000012', 'Channithona Loan Account', 'LOAN', '6004', 'USD',
+ 0.00, 9000.00, 'INACTIVE', CURRENT_DATE, 5, 'SYSTEM', 'SYSTEM'),
+
+
+-- User 6 (3 accounts)
+('AMK00000013', 'CoffeeHub Saving USD', 'SAVINGS', '6001', 'USD',
+ 3500.00, 3500.00, 'ACTIVE', CURRENT_DATE, 6, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000014', 'CoffeeHub Current USD', 'CURRENT', '6002', 'USD',
+ 7000.00, 7000.00, 'ACTIVE', CURRENT_DATE, 6, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000015', 'CoffeeHub Fixed Deposit', 'FD', '6003', 'USD',
+ 15000.00, 15000.00, 'ACTIVE', CURRENT_DATE, 6, 'SYSTEM', 'SYSTEM'),
+
+
+-- User 7 (2 accounts)
+('AMK00000016', 'User7 Saving KHR', 'SAVINGS', '6001', 'KHR',
+ 900000.00, 900000.00, 'ACTIVE', CURRENT_DATE, 7, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000017', 'User7 Saving USD', 'SAVINGS', '6001', 'USD',
+ 1800.00, 1800.00, 'ACTIVE', CURRENT_DATE, 7, 'SYSTEM', 'SYSTEM'),
+
+
+-- User 8 (2 accounts)
+('AMK00000018', 'Kakelay1805 Saving USD', 'SAVINGS', '6001', 'USD',
+ 2200.00, 2200.00, 'ACTIVE', CURRENT_DATE, 8, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000019', 'Kakelay1805 Current USD', 'CURRENT', '6002', 'USD',
+ 4500.00, 4500.00, 'ACTIVE', CURRENT_DATE, 8, 'SYSTEM', 'SYSTEM'),
+
+
+-- User 9 (2 accounts)
+('AMK00000020', 'Menghour Example Saving USD', 'SAVINGS', '6001', 'USD',
+ 1000.00, 1000.00, 'ACTIVE', CURRENT_DATE, 9, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000021', 'Menghour Example FD', 'FD', '6003', 'USD',
+ 8000.00, 8000.00, 'ACTIVE', CURRENT_DATE, 9, 'SYSTEM', 'SYSTEM'),
+
+
+-- User 10 (2 accounts)
+('AMK00000022', 'Niza Saving USD', 'SAVINGS', '6001', 'USD',
+ 500.00, 500.00, 'INACTIVE', CURRENT_DATE, 10, 'SYSTEM', 'SYSTEM'),
+
+('AMK00000023', 'Niza Current KHR', 'CURRENT', '6002', 'KHR',
+ 300000.00, 300000.00, 'INACTIVE', CURRENT_DATE, 10, 'SYSTEM', 'SYSTEM')
+ON CONFLICT (account_no) DO NOTHING;

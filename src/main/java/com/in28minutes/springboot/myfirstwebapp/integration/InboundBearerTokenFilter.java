@@ -31,13 +31,17 @@ public class InboundBearerTokenFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-        return HttpMethod.OPTIONS.matches(request.getMethod()) || !request.getRequestURI().startsWith("/api/");
+        String uri = request.getRequestURI();
+        boolean isAccountLookup = uri.startsWith("/api/accounts/user/");
+        return HttpMethod.OPTIONS.matches(request.getMethod())
+                || !uri.startsWith("/api/")
+                || isAccountLookup;
     }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
-                                    HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
+            HttpServletResponse response,
+            FilterChain filterChain) throws ServletException, IOException {
         String authorization = request.getHeader(HttpHeaders.AUTHORIZATION);
         if (authorization == null || !authorization.startsWith(BEARER_PREFIX)) {
             reject(response, "Missing bearer token");

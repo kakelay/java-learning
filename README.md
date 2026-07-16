@@ -6,6 +6,47 @@ This is a demo project for learning Spring Boot, developed by in28minutes.
 
 A comprehensive web application built with Spring Boot that demonstrates enterprise-level features including a T24-like user management system, authentication, todo management, and external service integration. The application showcases modern Spring Boot development practices with JPA, PostgreSQL, and RESTful API design.
 
+## New API Documentation
+
+### Get accounts by user ID
+
+**Endpoint**
+
+```http
+GET /api/accounts/user/{userId}
+```
+
+**Description**
+Returns all accounts associated with the provided user ID.
+
+**Path Parameter**
+
+- `userId` (required): numeric ID of the user
+
+**Example**
+
+```bash
+curl -X GET "http://localhost:8080/api/accounts/user/1"
+```
+
+**Example Response**
+
+```json
+{
+  "referenceNumber": "c66cf9b4-6347-47e3-a537-4ae0b0e35b6a",
+  "message": "Accounts retrieved successfully",
+  "data": [
+    {
+      "id": 1,
+      "accountNo": "AMK00000001",
+      "accountName": "Admin Saving USD",
+      "accountType": "SAVINGS",
+      "accountCode": "6001"
+    }
+  ]
+}
+```
+
 ## Prerequisites
 
 - Java 17 or higher
