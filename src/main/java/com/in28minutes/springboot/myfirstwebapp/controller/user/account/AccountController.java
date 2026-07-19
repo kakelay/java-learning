@@ -57,33 +57,10 @@ public class AccountController {
                 String ref = generateReference();
 
                 traceLogger.logTrace(
-                                "Processing /api/accounts/cid/" + userId + " request");
+                                "Processing /api/accounts/user/" + userId + " request");
 
                 List<Account> accounts = accountRepository.findByUser_Id(userId);
-                List<AccountResponse> accountResponses = accounts.stream()
-                                .map(this::toResponse)
-                                .toList();
-
-                if (accountResponses.isEmpty()) {
-
-                        String msg = messageSource.getMessage(
-                                        "response.notfound.message",
-                                        null,
-                                        "Account not found",
-                                        LocaleContextHolder.getLocale());
-
-                        return ResponseEntity.ok(
-                                        BaseResponse.success(ref, msg, null));
-                }
-
-                String msg = messageSource.getMessage(
-                                "response.success.message",
-                                null,
-                                "Accounts retrieved successfully",
-                                LocaleContextHolder.getLocale());
-
-                return ResponseEntity.ok(
-                                BaseResponse.success(ref, msg, accountResponses));
+                return getResponseEntity(ref, accounts);
         }
 
         @GetMapping("/detail")
@@ -92,7 +69,8 @@ public class AccountController {
 
                 String ref = generateReference();
 
-                traceLogger.logTrace("Processing /api/accounts/detail request");
+                traceLogger.logTrace("Processing /api/accounts/detail +"
+                                + " request : ref=" + ref);
 
                 if (accountNo != null && !accountNo.isBlank()) {
                         var accountOpt = accountRepository.findByAccountNo(accountNo);
@@ -117,6 +95,10 @@ public class AccountController {
                 }
 
                 List<Account> accounts = accountRepository.findAll();
+                return getResponseEntity(ref, accounts);
+        }
+
+        private ResponseEntity<?> getResponseEntity(String ref, List<Account> accounts) {
                 List<AccountResponse> accountResponses = accounts.stream()
                                 .map(this::toResponse)
                                 .toList();
