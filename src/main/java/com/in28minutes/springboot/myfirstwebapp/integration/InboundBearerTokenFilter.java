@@ -33,9 +33,11 @@ public class InboundBearerTokenFilter extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String uri = request.getRequestURI();
         boolean isAccountLookup = uri.startsWith("/api/accounts/user/");
+        boolean isUserApi = uri.startsWith("/api/user") || uri.startsWith("/api/user/");
         return HttpMethod.OPTIONS.matches(request.getMethod())
                 || !uri.startsWith("/api/")
-                || isAccountLookup;
+                || isAccountLookup
+                || isUserApi;
     }
 
     @Override
@@ -48,7 +50,15 @@ public class InboundBearerTokenFilter extends OncePerRequestFilter {
             return;
         }
 
-        authService.getValidToken();
+        try {
+            authService.getValidToken();
+        } catch (AuthenticationException ex) {
+            logger.warn("Authentication service unavailable for {} {}: {}",
+                    request.getMethod(), request.getRequestURI(), ex.getMessage());
+            reject(response, "Authentication service unavailable");
+            return;
+        }
+
         String token = authorization.substring(BEARER_PREFIX.length());
         if (!tokenManager.matchesValidToken(token)) {
             logger.warn("Rejected unauthorized API request: {} {}", request.getMethod(), request.getRequestURI());
