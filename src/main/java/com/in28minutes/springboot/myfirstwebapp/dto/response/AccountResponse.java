@@ -38,6 +38,8 @@ public class AccountResponse {
     private BigDecimal ledgerBalance;
     private Long userId;
 
+    private String userName;
+
     private LocalDate openDate;
 
     private LocalDate closeDate;
@@ -59,6 +61,7 @@ public class AccountResponse {
                 .availableBalance(account.getAvailableBalance())
                 .ledgerBalance(account.getLedgerBalance())
                 .userId(account.getUser() != null ? account.getUser().getId() : null)
+                .userName(account.getUser() != null ? account.getUser().getUsername() : null)
                 .openDate(account.getOpenDate())
                 .closeDate(account.getCloseDate())
                 .createdBy(account.getCreatedBy())

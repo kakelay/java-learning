@@ -43,6 +43,7 @@ public class AccountController {
                                 .availableBalance(account.getAvailableBalance())
                                 .ledgerBalance(account.getLedgerBalance())
                                 .userId(account.getUser() != null ? account.getUser().getId() : null)
+                                .userName(account.getUser() != null ? account.getUser().getUsername() : null)
                                 .openDate(account.getOpenDate())
                                 .closeDate(account.getCloseDate())
                                 .createdBy(account.getCreatedBy())
