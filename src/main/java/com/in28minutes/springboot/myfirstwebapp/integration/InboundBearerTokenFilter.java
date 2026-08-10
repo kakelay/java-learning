@@ -32,12 +32,13 @@ public class InboundBearerTokenFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String uri = request.getRequestURI();
-        boolean isAccountLookup = uri.startsWith("/api/accounts/user/");
-        boolean isUserApi = uri.startsWith("/api/user") || uri.startsWith("/api/user/");
+        // boolean isAccountLookup = uri.startsWith("/api/accounts");
+        // boolean isUserApi = uri.startsWith("/api/user") ||
+        // uri.startsWith("/api/user/");
         return HttpMethod.OPTIONS.matches(request.getMethod())
-                || !uri.startsWith("/api/")
-                || isAccountLookup
-                || isUserApi;
+                || !uri.startsWith("/api/");
+        // || isAccountLookup
+        // || isUserApi;
     }
 
     @Override
