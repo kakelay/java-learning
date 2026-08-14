@@ -1,0 +1,649 @@
+2026-04-13T16:33:53.028+07:00  INFO 8988 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 8988 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T16:33:53.030+07:00  INFO 8988 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T16:33:53.094+07:00  INFO 8988 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-13T16:33:53.095+07:00  INFO 8988 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-13T16:33:53.936+07:00  INFO 8988 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:33:53.936+07:00  INFO 8988 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T16:33:53.950+07:00  INFO 8988 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JDBC repository interfaces.
+2026-04-13T16:33:53.960+07:00  INFO 8988 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:33:53.961+07:00  INFO 8988 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T16:33:53.966+07:00  INFO 8988 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2026-04-13T16:33:54.601+07:00  INFO 8988 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T16:33:54.613+07:00  INFO 8988 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T16:33:54.615+07:00  INFO 8988 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T16:33:54.788+07:00  INFO 8988 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T16:33:54.793+07:00  INFO 8988 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T16:33:54.794+07:00  INFO 8988 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1698 ms
+2026-04-13T16:33:54.906+07:00  INFO 8988 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T16:33:55.042+07:00  INFO 8988 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T16:33:55.044+07:00  INFO 8988 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T16:33:55.058+07:00  INFO 8988 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T16:33:55.203+07:00  INFO 8988 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T16:33:55.240+07:00  INFO 8988 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-04-13T16:33:55.262+07:00  INFO 8988 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T16:33:55.472+07:00  INFO 8988 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T16:33:55.801+07:00  INFO 8988 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T16:33:55.805+07:00  INFO 8988 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:33:56.017+07:00  WARN 8988 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T16:33:56.991+07:00  INFO 8988 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T16:33:57.002+07:00  INFO 8988 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T16:33:57.133+07:00  INFO 8988 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T16:33:57.151+07:00  INFO 8988 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 4.523 seconds (process running for 5.344)
+2026-04-13T16:33:57.535+07:00  INFO 8988 --- [RMI TCP Connection(3)-192.168.106.242] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T16:33:57.536+07:00  INFO 8988 --- [RMI TCP Connection(3)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T16:33:57.539+07:00  INFO 8988 --- [RMI TCP Connection(3)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-13T16:33:58.762+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : START /user API
+2026-04-13T16:33:58.762+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : Generated reference: 0978712253
+2026-04-13T16:33:58.764+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : User response created: USR001
+2026-04-13T16:34:00.026+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : START /user API
+2026-04-13T16:34:00.026+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : Generated reference: 0009251457
+2026-04-13T16:34:00.026+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : User response created: USR001
+2026-04-13T16:34:01.175+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : START /user API
+2026-04-13T16:34:01.176+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : Generated reference: 0200602400
+2026-04-13T16:34:01.176+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : User response created: USR001
+2026-04-13T16:34:02.431+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : START /user API
+2026-04-13T16:34:02.431+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : Generated reference: 0992025569
+2026-04-13T16:34:02.431+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : User response created: USR001
+2026-04-13T16:34:03.717+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : START /user API
+2026-04-13T16:34:03.717+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : Generated reference: 0180422719
+2026-04-13T16:34:03.717+07:00  INFO 8988 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : User response created: USR001
+2026-04-13T16:35:04.332+07:00  INFO 8988 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:35:04.336+07:00  WARN 8988 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T16:35:04.337+07:00  INFO 8988 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T16:35:04.338+07:00  INFO 8988 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T16:35:06.985+07:00  INFO 10032 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 10032 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T16:35:06.986+07:00  INFO 10032 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T16:35:07.039+07:00  INFO 10032 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-13T16:35:07.039+07:00  INFO 10032 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-13T16:35:07.869+07:00  INFO 10032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:35:07.871+07:00  INFO 10032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T16:35:07.888+07:00  INFO 10032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JDBC repository interfaces.
+2026-04-13T16:35:07.899+07:00  INFO 10032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:35:07.900+07:00  INFO 10032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T16:35:07.906+07:00  INFO 10032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2026-04-13T16:35:08.569+07:00  INFO 10032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T16:35:08.582+07:00  INFO 10032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T16:35:08.582+07:00  INFO 10032 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T16:35:08.788+07:00  INFO 10032 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T16:35:08.796+07:00  INFO 10032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T16:35:08.796+07:00  INFO 10032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1756 ms
+2026-04-13T16:35:08.923+07:00  INFO 10032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T16:35:09.092+07:00  INFO 10032 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T16:35:09.094+07:00  INFO 10032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T16:35:09.110+07:00  INFO 10032 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T16:35:09.255+07:00  INFO 10032 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T16:35:09.291+07:00  INFO 10032 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-04-13T16:35:09.320+07:00  INFO 10032 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T16:35:09.508+07:00  INFO 10032 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T16:35:09.777+07:00  INFO 10032 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T16:35:09.781+07:00  INFO 10032 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:35:10.065+07:00  WARN 10032 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T16:35:10.954+07:00  INFO 10032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T16:35:10.962+07:00  INFO 10032 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T16:35:11.037+07:00  INFO 10032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T16:35:11.049+07:00  INFO 10032 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 4.465 seconds (process running for 5.53)
+2026-04-13T16:35:11.309+07:00  INFO 10032 --- [RMI TCP Connection(1)-192.168.106.242] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T16:35:11.309+07:00  INFO 10032 --- [RMI TCP Connection(1)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T16:35:11.313+07:00  INFO 10032 --- [RMI TCP Connection(1)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-04-13T16:35:19.737+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : START /user API
+2026-04-13T16:35:19.738+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : Generated reference: 0883264805
+2026-04-13T16:35:19.739+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : User response created: USR001
+2026-04-13T16:35:20.947+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : START /user API
+2026-04-13T16:35:20.947+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : Generated reference: 0996541581
+2026-04-13T16:35:20.947+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : User response created: USR001
+2026-04-13T16:35:21.955+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : START /user API
+2026-04-13T16:35:21.955+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : Generated reference: 0963474313
+2026-04-13T16:35:21.955+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : User response created: USR001
+2026-04-13T16:35:22.877+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : START /user API
+2026-04-13T16:35:22.877+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : Generated reference: 0783059851
+2026-04-13T16:35:22.877+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : User response created: USR001
+2026-04-13T16:35:23.721+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : START /user API
+2026-04-13T16:35:23.722+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : Generated reference: 0745758852
+2026-04-13T16:35:23.722+07:00  INFO 10032 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : User response created: USR001
+2026-04-13T16:36:25.393+07:00  INFO 10032 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:36:25.398+07:00  WARN 10032 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T16:36:25.400+07:00  INFO 10032 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T16:36:25.402+07:00  INFO 10032 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T16:36:30.197+07:00  INFO 20552 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 20552 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T16:36:30.199+07:00  INFO 20552 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T16:36:30.261+07:00  INFO 20552 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-13T16:36:30.262+07:00  INFO 20552 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-13T16:36:31.264+07:00  INFO 20552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:36:31.265+07:00  INFO 20552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T16:36:31.279+07:00  INFO 20552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2026-04-13T16:36:31.286+07:00  INFO 20552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:36:31.287+07:00  INFO 20552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T16:36:31.295+07:00  INFO 20552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2026-04-13T16:36:32.003+07:00  INFO 20552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T16:36:32.016+07:00  INFO 20552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T16:36:32.016+07:00  INFO 20552 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T16:36:32.212+07:00  INFO 20552 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T16:36:32.219+07:00  INFO 20552 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T16:36:32.220+07:00  INFO 20552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1958 ms
+2026-04-13T16:36:32.325+07:00  INFO 20552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T16:36:32.457+07:00  INFO 20552 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T16:36:32.459+07:00  INFO 20552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T16:36:32.474+07:00  INFO 20552 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T16:36:32.635+07:00  INFO 20552 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T16:36:32.678+07:00  INFO 20552 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-04-13T16:36:32.705+07:00  INFO 20552 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T16:36:32.924+07:00  INFO 20552 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T16:36:33.207+07:00  INFO 20552 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T16:36:33.211+07:00  INFO 20552 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:36:33.366+07:00  WARN 20552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T16:36:34.448+07:00  INFO 20552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T16:36:34.461+07:00  INFO 20552 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T16:36:34.571+07:00  INFO 20552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T16:36:34.584+07:00  INFO 20552 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 4.857 seconds (process running for 5.701)
+2026-04-13T16:36:35.261+07:00  INFO 20552 --- [RMI TCP Connection(2)-192.168.106.242] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T16:36:35.261+07:00  INFO 20552 --- [RMI TCP Connection(2)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T16:36:35.263+07:00  INFO 20552 --- [RMI TCP Connection(2)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-13T16:36:35.566+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : START /user API | traceId=497ffc81-ca4c-4438-9141-dfd5dd55ef74
+2026-04-13T16:36:35.566+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : Generated reference | traceId=497ffc81-ca4c-4438-9141-dfd5dd55ef74 | ref=0600274635
+2026-04-13T16:36:35.567+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : User response created | traceId=497ffc81-ca4c-4438-9141-dfd5dd55ef74 | userId=USR001
+2026-04-13T16:36:35.567+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-2] TXN_LOGGER                               : TXN | traceId=497ffc81-ca4c-4438-9141-dfd5dd55ef74 | ref=0600274635 | userId=USR001 | status=SUCCESS
+2026-04-13T16:36:35.568+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-2] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=497ffc81-ca4c-4438-9141-dfd5dd55ef74 | userId=USR001 | action=SUCCESS
+2026-04-13T16:36:35.568+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : END /user API | traceId=497ffc81-ca4c-4438-9141-dfd5dd55ef74
+2026-04-13T16:36:36.621+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : START /user API | traceId=5e28afdd-c685-4818-a73f-8ecabd8f3504
+2026-04-13T16:36:36.621+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : Generated reference | traceId=5e28afdd-c685-4818-a73f-8ecabd8f3504 | ref=0623785512
+2026-04-13T16:36:36.621+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : User response created | traceId=5e28afdd-c685-4818-a73f-8ecabd8f3504 | userId=USR001
+2026-04-13T16:36:36.621+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-3] TXN_LOGGER                               : TXN | traceId=5e28afdd-c685-4818-a73f-8ecabd8f3504 | ref=0623785512 | userId=USR001 | status=SUCCESS
+2026-04-13T16:36:36.621+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-3] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=5e28afdd-c685-4818-a73f-8ecabd8f3504 | userId=USR001 | action=SUCCESS
+2026-04-13T16:36:36.621+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : END /user API | traceId=5e28afdd-c685-4818-a73f-8ecabd8f3504
+2026-04-13T16:36:38.160+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : START /user API | traceId=bbbc6d9e-f99e-40b3-b375-aadd65bd617d
+2026-04-13T16:36:38.160+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : Generated reference | traceId=bbbc6d9e-f99e-40b3-b375-aadd65bd617d | ref=0646711985
+2026-04-13T16:36:38.160+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : User response created | traceId=bbbc6d9e-f99e-40b3-b375-aadd65bd617d | userId=USR001
+2026-04-13T16:36:38.160+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-4] TXN_LOGGER                               : TXN | traceId=bbbc6d9e-f99e-40b3-b375-aadd65bd617d | ref=0646711985 | userId=USR001 | status=SUCCESS
+2026-04-13T16:36:38.160+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-4] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=bbbc6d9e-f99e-40b3-b375-aadd65bd617d | userId=USR001 | action=SUCCESS
+2026-04-13T16:36:38.160+07:00  INFO 20552 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : END /user API | traceId=bbbc6d9e-f99e-40b3-b375-aadd65bd617d
+2026-04-13T16:38:37.852+07:00  INFO 20552 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:38:37.857+07:00  WARN 20552 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T16:38:37.858+07:00  INFO 20552 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T16:38:37.860+07:00  INFO 20552 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T16:38:40.134+07:00  INFO 19020 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 19020 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T16:38:40.136+07:00  INFO 19020 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T16:38:40.214+07:00  INFO 19020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-13T16:38:40.214+07:00  INFO 19020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-13T16:38:41.050+07:00  INFO 19020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:38:41.050+07:00  INFO 19020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T16:38:41.063+07:00  INFO 19020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2026-04-13T16:38:41.071+07:00  INFO 19020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:38:41.072+07:00  INFO 19020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T16:38:41.077+07:00  INFO 19020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2026-04-13T16:38:41.726+07:00  INFO 19020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T16:38:41.736+07:00  INFO 19020 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T16:38:41.737+07:00  INFO 19020 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T16:38:41.910+07:00  INFO 19020 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T16:38:41.915+07:00  INFO 19020 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T16:38:41.915+07:00  INFO 19020 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1700 ms
+2026-04-13T16:38:42.019+07:00  INFO 19020 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T16:38:42.136+07:00  INFO 19020 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T16:38:42.137+07:00  INFO 19020 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T16:38:42.151+07:00  INFO 19020 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T16:38:42.307+07:00  INFO 19020 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T16:38:42.342+07:00  INFO 19020 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-04-13T16:38:42.363+07:00  INFO 19020 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T16:38:42.562+07:00  INFO 19020 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T16:38:42.876+07:00  INFO 19020 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T16:38:42.882+07:00  INFO 19020 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:38:43.039+07:00  WARN 19020 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T16:38:44.152+07:00  INFO 19020 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T16:38:44.159+07:00  INFO 19020 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T16:38:44.243+07:00  INFO 19020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T16:38:44.256+07:00  INFO 19020 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 4.557 seconds (process running for 5.614)
+2026-04-13T16:38:44.834+07:00  INFO 19020 --- [RMI TCP Connection(4)-192.168.106.242] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T16:38:44.836+07:00  INFO 19020 --- [RMI TCP Connection(4)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T16:38:44.839+07:00  INFO 19020 --- [RMI TCP Connection(4)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-13T16:38:46.645+07:00  INFO 19020 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:38:46.649+07:00  WARN 19020 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T16:38:46.650+07:00  INFO 19020 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T16:38:46.653+07:00  INFO 19020 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T16:38:48.975+07:00  INFO 19888 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 19888 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T16:38:48.976+07:00  INFO 19888 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T16:38:49.029+07:00  INFO 19888 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-13T16:38:49.029+07:00  INFO 19888 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-13T16:38:49.869+07:00  INFO 19888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:38:49.870+07:00  INFO 19888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T16:38:49.889+07:00  INFO 19888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JDBC repository interfaces.
+2026-04-13T16:38:49.899+07:00  INFO 19888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:38:49.901+07:00  INFO 19888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T16:38:49.907+07:00  INFO 19888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2026-04-13T16:38:50.750+07:00  INFO 19888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T16:38:50.767+07:00  INFO 19888 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T16:38:50.767+07:00  INFO 19888 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T16:38:51.018+07:00  INFO 19888 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T16:38:51.033+07:00  INFO 19888 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T16:38:51.042+07:00  INFO 19888 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2011 ms
+2026-04-13T16:38:51.212+07:00  INFO 19888 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T16:38:51.427+07:00  INFO 19888 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T16:38:51.429+07:00  INFO 19888 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T16:38:51.440+07:00  INFO 19888 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T16:38:51.634+07:00  INFO 19888 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T16:38:51.686+07:00  INFO 19888 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-04-13T16:38:51.718+07:00  INFO 19888 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T16:38:51.986+07:00  INFO 19888 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T16:38:52.418+07:00  INFO 19888 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T16:38:52.424+07:00  INFO 19888 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:38:52.656+07:00  WARN 19888 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T16:38:53.671+07:00  INFO 19888 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T16:38:53.679+07:00  INFO 19888 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T16:38:53.774+07:00  INFO 19888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T16:38:53.784+07:00  INFO 19888 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 5.196 seconds (process running for 6.034)
+2026-04-13T16:38:54.005+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T16:38:54.006+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T16:38:54.008+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-13T16:38:54.057+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : START /user API | traceId=cf80fafd-5cb8-46b9-8ac8-fc64eb047be0
+2026-04-13T16:38:54.057+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : Generated reference | traceId=cf80fafd-5cb8-46b9-8ac8-fc64eb047be0 | ref=0696127902
+2026-04-13T16:38:54.058+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : User response created | traceId=cf80fafd-5cb8-46b9-8ac8-fc64eb047be0 | userId=USR001
+2026-04-13T16:38:54.059+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-2] TXN_LOGGER                               : TXN | traceId=cf80fafd-5cb8-46b9-8ac8-fc64eb047be0 | ref=0696127902 | userId=USR001 | status=SUCCESS
+2026-04-13T16:38:54.059+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-2] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=cf80fafd-5cb8-46b9-8ac8-fc64eb047be0 | userId=USR001 | action=SUCCESS
+2026-04-13T16:38:54.059+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : END /user API | traceId=cf80fafd-5cb8-46b9-8ac8-fc64eb047be0
+2026-04-13T16:38:55.305+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : START /user API | traceId=31da98c8-cbce-4870-9327-74bdb35da282
+2026-04-13T16:38:55.305+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : Generated reference | traceId=31da98c8-cbce-4870-9327-74bdb35da282 | ref=0124029428
+2026-04-13T16:38:55.305+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : User response created | traceId=31da98c8-cbce-4870-9327-74bdb35da282 | userId=USR001
+2026-04-13T16:38:55.305+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-3] TXN_LOGGER                               : TXN | traceId=31da98c8-cbce-4870-9327-74bdb35da282 | ref=0124029428 | userId=USR001 | status=SUCCESS
+2026-04-13T16:38:55.306+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-3] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=31da98c8-cbce-4870-9327-74bdb35da282 | userId=USR001 | action=SUCCESS
+2026-04-13T16:38:55.306+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : END /user API | traceId=31da98c8-cbce-4870-9327-74bdb35da282
+2026-04-13T16:38:56.290+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : START /user API | traceId=4ca90e82-1113-4c57-8ee4-73d00655e09a
+2026-04-13T16:38:56.291+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : Generated reference | traceId=4ca90e82-1113-4c57-8ee4-73d00655e09a | ref=0680993509
+2026-04-13T16:38:56.291+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : User response created | traceId=4ca90e82-1113-4c57-8ee4-73d00655e09a | userId=USR001
+2026-04-13T16:38:56.291+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-4] TXN_LOGGER                               : TXN | traceId=4ca90e82-1113-4c57-8ee4-73d00655e09a | ref=0680993509 | userId=USR001 | status=SUCCESS
+2026-04-13T16:38:56.291+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-4] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=4ca90e82-1113-4c57-8ee4-73d00655e09a | userId=USR001 | action=SUCCESS
+2026-04-13T16:38:56.291+07:00  INFO 19888 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : END /user API | traceId=4ca90e82-1113-4c57-8ee4-73d00655e09a
+2026-04-13T16:40:22.256+07:00  INFO 19888 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:40:22.262+07:00  WARN 19888 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T16:40:22.263+07:00  INFO 19888 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T16:40:22.264+07:00  INFO 19888 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T16:41:17.477+07:00  INFO 11044 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 11044 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T16:41:17.479+07:00  INFO 11044 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T16:41:17.540+07:00  INFO 11044 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-13T16:41:17.540+07:00  INFO 11044 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-13T16:41:18.567+07:00  INFO 11044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:41:18.569+07:00  INFO 11044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T16:41:18.585+07:00  INFO 11044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
+2026-04-13T16:41:18.594+07:00  INFO 11044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T16:41:18.596+07:00  INFO 11044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T16:41:18.602+07:00  INFO 11044 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2026-04-13T16:41:19.315+07:00  INFO 11044 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T16:41:19.324+07:00  INFO 11044 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T16:41:19.324+07:00  INFO 11044 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T16:41:19.525+07:00  INFO 11044 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T16:41:19.532+07:00  INFO 11044 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T16:41:19.533+07:00  INFO 11044 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1992 ms
+2026-04-13T16:41:19.646+07:00  INFO 11044 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T16:41:19.816+07:00  INFO 11044 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T16:41:19.817+07:00  INFO 11044 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T16:41:19.828+07:00  INFO 11044 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T16:41:19.988+07:00  INFO 11044 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T16:41:20.023+07:00  INFO 11044 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-04-13T16:41:20.051+07:00  INFO 11044 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T16:41:20.264+07:00  INFO 11044 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T16:41:20.545+07:00  INFO 11044 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T16:41:20.548+07:00  INFO 11044 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T16:41:20.707+07:00  WARN 11044 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T16:41:21.568+07:00  INFO 11044 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T16:41:21.580+07:00  INFO 11044 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T16:41:21.722+07:00  INFO 11044 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T16:41:21.747+07:00  INFO 11044 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 4.691 seconds (process running for 5.474)
+2026-04-13T16:41:22.497+07:00  INFO 11044 --- [RMI TCP Connection(4)-192.168.106.242] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T16:41:22.497+07:00  INFO 11044 --- [RMI TCP Connection(4)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T16:41:22.499+07:00  INFO 11044 --- [RMI TCP Connection(4)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-13T16:41:22.917+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : START /user API | traceId=4a268064-d0ee-418e-9ed1-3c554cc33be2
+2026-04-13T16:41:22.918+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : Generated reference | traceId=4a268064-d0ee-418e-9ed1-3c554cc33be2 | ref=0844495123
+2026-04-13T16:41:22.920+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : User response created | traceId=4a268064-d0ee-418e-9ed1-3c554cc33be2 | userId=USR001
+2026-04-13T16:41:22.920+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] TXN_LOGGER                               : TXN | traceId=4a268064-d0ee-418e-9ed1-3c554cc33be2 | ref=0844495123 | userId=USR001 | status=SUCCESS
+2026-04-13T16:41:22.920+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=4a268064-d0ee-418e-9ed1-3c554cc33be2 | userId=USR001 | action=SUCCESS
+2026-04-13T16:41:22.920+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : END /user API | traceId=4a268064-d0ee-418e-9ed1-3c554cc33be2
+2026-04-13T16:41:23.837+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : START /user API | traceId=4ac23fbe-0a55-4d21-a5fa-99d798bbfe74
+2026-04-13T16:41:23.838+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : Generated reference | traceId=4ac23fbe-0a55-4d21-a5fa-99d798bbfe74 | ref=0493283674
+2026-04-13T16:41:23.838+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : User response created | traceId=4ac23fbe-0a55-4d21-a5fa-99d798bbfe74 | userId=USR001
+2026-04-13T16:41:23.838+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] TXN_LOGGER                               : TXN | traceId=4ac23fbe-0a55-4d21-a5fa-99d798bbfe74 | ref=0493283674 | userId=USR001 | status=SUCCESS
+2026-04-13T16:41:23.838+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=4ac23fbe-0a55-4d21-a5fa-99d798bbfe74 | userId=USR001 | action=SUCCESS
+2026-04-13T16:41:23.838+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : END /user API | traceId=4ac23fbe-0a55-4d21-a5fa-99d798bbfe74
+2026-04-13T16:41:24.899+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : START /user API | traceId=e8350bb7-33ea-415a-a2cb-e9349b46dcad
+2026-04-13T16:41:24.900+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : Generated reference | traceId=e8350bb7-33ea-415a-a2cb-e9349b46dcad | ref=0691977336
+2026-04-13T16:41:24.900+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : User response created | traceId=e8350bb7-33ea-415a-a2cb-e9349b46dcad | userId=USR001
+2026-04-13T16:41:24.900+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] TXN_LOGGER                               : TXN | traceId=e8350bb7-33ea-415a-a2cb-e9349b46dcad | ref=0691977336 | userId=USR001 | status=SUCCESS
+2026-04-13T16:41:24.900+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=e8350bb7-33ea-415a-a2cb-e9349b46dcad | userId=USR001 | action=SUCCESS
+2026-04-13T16:41:24.900+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : END /user API | traceId=e8350bb7-33ea-415a-a2cb-e9349b46dcad
+2026-04-13T16:42:14.339+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-9] c.i.s.m.controller.UserController        : START /user API | traceId=1c4bd068-6b9c-4368-9acb-5b259cd13cf5
+2026-04-13T16:42:14.339+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-9] c.i.s.m.controller.UserController        : Generated reference | traceId=1c4bd068-6b9c-4368-9acb-5b259cd13cf5 | ref=0618009622
+2026-04-13T16:42:14.339+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-9] c.i.s.m.controller.UserController        : User response created | traceId=1c4bd068-6b9c-4368-9acb-5b259cd13cf5 | userId=USR001
+2026-04-13T16:42:14.339+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-9] TXN_LOGGER                               : TXN | traceId=1c4bd068-6b9c-4368-9acb-5b259cd13cf5 | ref=0618009622 | userId=USR001 | status=SUCCESS
+2026-04-13T16:42:14.339+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-9] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=1c4bd068-6b9c-4368-9acb-5b259cd13cf5 | userId=USR001 | action=SUCCESS
+2026-04-13T16:42:14.339+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-9] c.i.s.m.controller.UserController        : END /user API | traceId=1c4bd068-6b9c-4368-9acb-5b259cd13cf5
+2026-04-13T16:42:15.580+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-10] c.i.s.m.controller.UserController        : START /user API | traceId=29d018c0-aea8-45ff-b5af-a6715b4e1ca3
+2026-04-13T16:42:15.580+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-10] c.i.s.m.controller.UserController        : Generated reference | traceId=29d018c0-aea8-45ff-b5af-a6715b4e1ca3 | ref=0744241888
+2026-04-13T16:42:15.580+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-10] c.i.s.m.controller.UserController        : User response created | traceId=29d018c0-aea8-45ff-b5af-a6715b4e1ca3 | userId=USR001
+2026-04-13T16:42:15.580+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-10] TXN_LOGGER                               : TXN | traceId=29d018c0-aea8-45ff-b5af-a6715b4e1ca3 | ref=0744241888 | userId=USR001 | status=SUCCESS
+2026-04-13T16:42:15.580+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-10] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=29d018c0-aea8-45ff-b5af-a6715b4e1ca3 | userId=USR001 | action=SUCCESS
+2026-04-13T16:42:15.580+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-10] c.i.s.m.controller.UserController        : END /user API | traceId=29d018c0-aea8-45ff-b5af-a6715b4e1ca3
+2026-04-13T16:42:16.562+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : START /user API | traceId=aa01031f-7644-4ce3-8857-9aad890d7c3c
+2026-04-13T16:42:16.563+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : Generated reference | traceId=aa01031f-7644-4ce3-8857-9aad890d7c3c | ref=0564229226
+2026-04-13T16:42:16.563+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : User response created | traceId=aa01031f-7644-4ce3-8857-9aad890d7c3c | userId=USR001
+2026-04-13T16:42:16.563+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] TXN_LOGGER                               : TXN | traceId=aa01031f-7644-4ce3-8857-9aad890d7c3c | ref=0564229226 | userId=USR001 | status=SUCCESS
+2026-04-13T16:42:16.563+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=aa01031f-7644-4ce3-8857-9aad890d7c3c | userId=USR001 | action=SUCCESS
+2026-04-13T16:42:16.563+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : END /user API | traceId=aa01031f-7644-4ce3-8857-9aad890d7c3c
+2026-04-13T16:42:26.998+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : START /user API | traceId=0ab5e2e2-670c-4c4a-8a09-3a874c8d0976
+2026-04-13T16:42:26.998+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : Generated reference | traceId=0ab5e2e2-670c-4c4a-8a09-3a874c8d0976 | ref=0115930577
+2026-04-13T16:42:26.998+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : User response created | traceId=0ab5e2e2-670c-4c4a-8a09-3a874c8d0976 | userId=USR001
+2026-04-13T16:42:26.998+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] TXN_LOGGER                               : TXN | traceId=0ab5e2e2-670c-4c4a-8a09-3a874c8d0976 | ref=0115930577 | userId=USR001 | status=SUCCESS
+2026-04-13T16:42:26.998+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=0ab5e2e2-670c-4c4a-8a09-3a874c8d0976 | userId=USR001 | action=SUCCESS
+2026-04-13T16:42:26.998+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : END /user API | traceId=0ab5e2e2-670c-4c4a-8a09-3a874c8d0976
+2026-04-13T16:42:27.879+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : START /user API | traceId=bf482d1d-7ce7-4975-8790-95b7021856cb
+2026-04-13T16:42:27.879+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : Generated reference | traceId=bf482d1d-7ce7-4975-8790-95b7021856cb | ref=0200079914
+2026-04-13T16:42:27.879+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : User response created | traceId=bf482d1d-7ce7-4975-8790-95b7021856cb | userId=USR001
+2026-04-13T16:42:27.879+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] TXN_LOGGER                               : TXN | traceId=bf482d1d-7ce7-4975-8790-95b7021856cb | ref=0200079914 | userId=USR001 | status=SUCCESS
+2026-04-13T16:42:27.879+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=bf482d1d-7ce7-4975-8790-95b7021856cb | userId=USR001 | action=SUCCESS
+2026-04-13T16:42:27.879+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : END /user API | traceId=bf482d1d-7ce7-4975-8790-95b7021856cb
+2026-04-13T16:42:28.778+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : START /user API | traceId=b105a108-b3cc-48bd-808f-db91cd5039f1
+2026-04-13T16:42:28.779+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : Generated reference | traceId=b105a108-b3cc-48bd-808f-db91cd5039f1 | ref=0958167779
+2026-04-13T16:42:28.779+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : User response created | traceId=b105a108-b3cc-48bd-808f-db91cd5039f1 | userId=USR001
+2026-04-13T16:42:28.779+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] TXN_LOGGER                               : TXN | traceId=b105a108-b3cc-48bd-808f-db91cd5039f1 | ref=0958167779 | userId=USR001 | status=SUCCESS
+2026-04-13T16:42:28.779+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=b105a108-b3cc-48bd-808f-db91cd5039f1 | userId=USR001 | action=SUCCESS
+2026-04-13T16:42:28.779+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : END /user API | traceId=b105a108-b3cc-48bd-808f-db91cd5039f1
+2026-04-13T16:42:29.590+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : START /user API | traceId=1d43d067-94c6-43b8-b4f7-7bd9300a3987
+2026-04-13T16:42:29.591+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : Generated reference | traceId=1d43d067-94c6-43b8-b4f7-7bd9300a3987 | ref=0739105594
+2026-04-13T16:42:29.591+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : User response created | traceId=1d43d067-94c6-43b8-b4f7-7bd9300a3987 | userId=USR001
+2026-04-13T16:42:29.591+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] TXN_LOGGER                               : TXN | traceId=1d43d067-94c6-43b8-b4f7-7bd9300a3987 | ref=0739105594 | userId=USR001 | status=SUCCESS
+2026-04-13T16:42:29.591+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=1d43d067-94c6-43b8-b4f7-7bd9300a3987 | userId=USR001 | action=SUCCESS
+2026-04-13T16:42:29.593+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : END /user API | traceId=1d43d067-94c6-43b8-b4f7-7bd9300a3987
+2026-04-13T16:42:30.376+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : START /user API | traceId=9999e228-f4b4-421d-b906-1d2555752101
+2026-04-13T16:42:30.376+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : Generated reference | traceId=9999e228-f4b4-421d-b906-1d2555752101 | ref=0416083928
+2026-04-13T16:42:30.376+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : User response created | traceId=9999e228-f4b4-421d-b906-1d2555752101 | userId=USR001
+2026-04-13T16:42:30.376+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] TXN_LOGGER                               : TXN | traceId=9999e228-f4b4-421d-b906-1d2555752101 | ref=0416083928 | userId=USR001 | status=SUCCESS
+2026-04-13T16:42:30.376+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=9999e228-f4b4-421d-b906-1d2555752101 | userId=USR001 | action=SUCCESS
+2026-04-13T16:42:30.376+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : END /user API | traceId=9999e228-f4b4-421d-b906-1d2555752101
+2026-04-13T16:42:31.075+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : START /user API | traceId=28071c64-7b7d-439b-a939-e7791b48f11e
+2026-04-13T16:42:31.076+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : Generated reference | traceId=28071c64-7b7d-439b-a939-e7791b48f11e | ref=0858970845
+2026-04-13T16:42:31.076+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : User response created | traceId=28071c64-7b7d-439b-a939-e7791b48f11e | userId=USR001
+2026-04-13T16:42:31.076+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] TXN_LOGGER                               : TXN | traceId=28071c64-7b7d-439b-a939-e7791b48f11e | ref=0858970845 | userId=USR001 | status=SUCCESS
+2026-04-13T16:42:31.076+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=28071c64-7b7d-439b-a939-e7791b48f11e | userId=USR001 | action=SUCCESS
+2026-04-13T16:42:31.076+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : END /user API | traceId=28071c64-7b7d-439b-a939-e7791b48f11e
+2026-04-13T16:42:31.778+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : START /user API | traceId=0b4a9ce3-4a10-449a-99b5-784fc3cee428
+2026-04-13T16:42:31.778+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : Generated reference | traceId=0b4a9ce3-4a10-449a-99b5-784fc3cee428 | ref=0429871447
+2026-04-13T16:42:31.779+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : User response created | traceId=0b4a9ce3-4a10-449a-99b5-784fc3cee428 | userId=USR001
+2026-04-13T16:42:31.779+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] TXN_LOGGER                               : TXN | traceId=0b4a9ce3-4a10-449a-99b5-784fc3cee428 | ref=0429871447 | userId=USR001 | status=SUCCESS
+2026-04-13T16:42:31.779+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=0b4a9ce3-4a10-449a-99b5-784fc3cee428 | userId=USR001 | action=SUCCESS
+2026-04-13T16:42:31.779+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : END /user API | traceId=0b4a9ce3-4a10-449a-99b5-784fc3cee428
+2026-04-13T17:15:44.546+07:00  WARN 11044 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m54s519ms656µs700ns).
+2026-04-13T17:16:07.133+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : START /user API | traceId=b9a5a54a-6a62-4d93-b9a4-7e6b36177dd1
+2026-04-13T17:16:07.133+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : Generated reference | traceId=b9a5a54a-6a62-4d93-b9a4-7e6b36177dd1 | ref=0427607855
+2026-04-13T17:16:07.133+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : User response created | traceId=b9a5a54a-6a62-4d93-b9a4-7e6b36177dd1 | userId=USR001
+2026-04-13T17:16:07.133+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] TXN_LOGGER                               : TXN | traceId=b9a5a54a-6a62-4d93-b9a4-7e6b36177dd1 | ref=0427607855 | userId=USR001 | status=SUCCESS
+2026-04-13T17:16:07.133+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=b9a5a54a-6a62-4d93-b9a4-7e6b36177dd1 | userId=USR001 | action=SUCCESS
+2026-04-13T17:16:07.133+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : END /user API | traceId=b9a5a54a-6a62-4d93-b9a4-7e6b36177dd1
+2026-04-13T17:16:07.950+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : START /user API | traceId=91404e63-83dd-4cf0-a4cb-8755aa84d054
+2026-04-13T17:16:07.951+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : Generated reference | traceId=91404e63-83dd-4cf0-a4cb-8755aa84d054 | ref=0687837411
+2026-04-13T17:16:07.951+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : User response created | traceId=91404e63-83dd-4cf0-a4cb-8755aa84d054 | userId=USR001
+2026-04-13T17:16:07.951+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] TXN_LOGGER                               : TXN | traceId=91404e63-83dd-4cf0-a4cb-8755aa84d054 | ref=0687837411 | userId=USR001 | status=SUCCESS
+2026-04-13T17:16:07.951+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=91404e63-83dd-4cf0-a4cb-8755aa84d054 | userId=USR001 | action=SUCCESS
+2026-04-13T17:16:07.951+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : END /user API | traceId=91404e63-83dd-4cf0-a4cb-8755aa84d054
+2026-04-13T17:16:09.917+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : START /user API | traceId=754ae171-8b25-44ee-99ca-567e22519bc2
+2026-04-13T17:16:09.918+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : Generated reference | traceId=754ae171-8b25-44ee-99ca-567e22519bc2 | ref=0394125526
+2026-04-13T17:16:09.918+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : User response created | traceId=754ae171-8b25-44ee-99ca-567e22519bc2 | userId=USR001
+2026-04-13T17:16:09.918+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] TXN_LOGGER                               : TXN | traceId=754ae171-8b25-44ee-99ca-567e22519bc2 | ref=0394125526 | userId=USR001 | status=SUCCESS
+2026-04-13T17:16:09.918+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=754ae171-8b25-44ee-99ca-567e22519bc2 | userId=USR001 | action=SUCCESS
+2026-04-13T17:16:09.918+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : END /user API | traceId=754ae171-8b25-44ee-99ca-567e22519bc2
+2026-04-13T17:16:26.893+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : START /user API | traceId=644865c4-d499-48fd-8f80-2c364b7e9e09
+2026-04-13T17:16:26.893+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : Generated reference | traceId=644865c4-d499-48fd-8f80-2c364b7e9e09 | ref=0514346952
+2026-04-13T17:16:26.893+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : User response created | traceId=644865c4-d499-48fd-8f80-2c364b7e9e09 | userId=USR001
+2026-04-13T17:16:26.893+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] TXN_LOGGER                               : TXN | traceId=644865c4-d499-48fd-8f80-2c364b7e9e09 | ref=0514346952 | userId=USR001 | status=SUCCESS
+2026-04-13T17:16:26.893+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=644865c4-d499-48fd-8f80-2c364b7e9e09 | userId=USR001 | action=SUCCESS
+2026-04-13T17:16:26.893+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : END /user API | traceId=644865c4-d499-48fd-8f80-2c364b7e9e09
+2026-04-13T17:16:27.909+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : START /user API | traceId=0911a22b-c0b9-4a1b-ac46-bce2d2e9a4d9
+2026-04-13T17:16:27.909+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : Generated reference | traceId=0911a22b-c0b9-4a1b-ac46-bce2d2e9a4d9 | ref=0757984578
+2026-04-13T17:16:27.909+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : User response created | traceId=0911a22b-c0b9-4a1b-ac46-bce2d2e9a4d9 | userId=USR001
+2026-04-13T17:16:27.909+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] TXN_LOGGER                               : TXN | traceId=0911a22b-c0b9-4a1b-ac46-bce2d2e9a4d9 | ref=0757984578 | userId=USR001 | status=SUCCESS
+2026-04-13T17:16:27.910+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=0911a22b-c0b9-4a1b-ac46-bce2d2e9a4d9 | userId=USR001 | action=SUCCESS
+2026-04-13T17:16:27.910+07:00  INFO 11044 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : END /user API | traceId=0911a22b-c0b9-4a1b-ac46-bce2d2e9a4d9
+2026-04-13T17:18:50.898+07:00  INFO 11044 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:18:50.903+07:00  WARN 11044 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T17:18:50.904+07:00  INFO 11044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T17:18:50.906+07:00  INFO 11044 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T17:18:53.190+07:00  INFO 3452 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 3452 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T17:18:53.192+07:00  INFO 3452 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T17:18:53.259+07:00  INFO 3452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-13T17:18:53.260+07:00  INFO 3452 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-13T17:18:54.105+07:00  INFO 3452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T17:18:54.106+07:00  INFO 3452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T17:18:54.120+07:00  INFO 3452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2026-04-13T17:18:54.127+07:00  INFO 3452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T17:18:54.128+07:00  INFO 3452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T17:18:54.133+07:00  INFO 3452 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2026-04-13T17:18:54.710+07:00  INFO 3452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T17:18:54.720+07:00  INFO 3452 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T17:18:54.720+07:00  INFO 3452 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T17:18:54.892+07:00  INFO 3452 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T17:18:54.898+07:00  INFO 3452 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T17:18:54.898+07:00  INFO 3452 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1638 ms
+2026-04-13T17:18:55.004+07:00  INFO 3452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T17:18:55.130+07:00  INFO 3452 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T17:18:55.132+07:00  INFO 3452 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T17:18:55.140+07:00  INFO 3452 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T17:18:55.293+07:00  INFO 3452 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T17:18:55.331+07:00  INFO 3452 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-04-13T17:18:55.355+07:00  INFO 3452 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T17:18:55.590+07:00  INFO 3452 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T17:18:55.886+07:00  INFO 3452 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T17:18:55.890+07:00  INFO 3452 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:18:56.076+07:00  WARN 3452 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T17:18:57.097+07:00  INFO 3452 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T17:18:57.106+07:00  INFO 3452 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T17:18:57.215+07:00  INFO 3452 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T17:18:57.230+07:00  INFO 3452 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 4.433 seconds (process running for 5.302)
+2026-04-13T17:18:57.552+07:00  INFO 3452 --- [RMI TCP Connection(1)-192.168.106.242] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T17:18:57.553+07:00  INFO 3452 --- [RMI TCP Connection(1)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T17:18:57.555+07:00  INFO 3452 --- [RMI TCP Connection(1)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-13T17:19:02.725+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : START /user API | traceId=d86a94a5-e848-46ba-b462-9fc56ac3e8ee
+2026-04-13T17:19:02.726+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : Generated reference | traceId=d86a94a5-e848-46ba-b462-9fc56ac3e8ee | ref=0670668943
+2026-04-13T17:19:02.729+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : User response created | traceId=d86a94a5-e848-46ba-b462-9fc56ac3e8ee | userId=USR001
+2026-04-13T17:19:02.729+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-2] TXN_LOGGER                               : TXN | traceId=d86a94a5-e848-46ba-b462-9fc56ac3e8ee | ref=0670668943 | userId=USR001 | status=SUCCESS
+2026-04-13T17:19:02.729+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-2] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=d86a94a5-e848-46ba-b462-9fc56ac3e8ee | userId=USR001 | action=SUCCESS
+2026-04-13T17:19:02.730+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : END /user API | traceId=d86a94a5-e848-46ba-b462-9fc56ac3e8ee
+2026-04-13T17:19:05.013+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : START /user API | traceId=e635bf5e-7468-4903-b5d5-ff5c474d3f43
+2026-04-13T17:19:05.014+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : Generated reference | traceId=e635bf5e-7468-4903-b5d5-ff5c474d3f43 | ref=0257589792
+2026-04-13T17:19:05.014+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : User response created | traceId=e635bf5e-7468-4903-b5d5-ff5c474d3f43 | userId=USR001
+2026-04-13T17:19:05.014+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-3] TXN_LOGGER                               : TXN | traceId=e635bf5e-7468-4903-b5d5-ff5c474d3f43 | ref=0257589792 | userId=USR001 | status=SUCCESS
+2026-04-13T17:19:05.014+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-3] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=e635bf5e-7468-4903-b5d5-ff5c474d3f43 | userId=USR001 | action=SUCCESS
+2026-04-13T17:19:05.014+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : END /user API | traceId=e635bf5e-7468-4903-b5d5-ff5c474d3f43
+2026-04-13T17:19:14.903+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : START /user API | traceId=9d0c813d-065a-4a3f-a7a4-5278d1c654e1
+2026-04-13T17:19:14.903+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : Generated reference | traceId=9d0c813d-065a-4a3f-a7a4-5278d1c654e1 | ref=0668638373
+2026-04-13T17:19:14.903+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : User response created | traceId=9d0c813d-065a-4a3f-a7a4-5278d1c654e1 | userId=USR001
+2026-04-13T17:19:14.903+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-4] TXN_LOGGER                               : TXN | traceId=9d0c813d-065a-4a3f-a7a4-5278d1c654e1 | ref=0668638373 | userId=USR001 | status=SUCCESS
+2026-04-13T17:19:14.904+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-4] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=9d0c813d-065a-4a3f-a7a4-5278d1c654e1 | userId=USR001 | action=SUCCESS
+2026-04-13T17:19:14.904+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-4] c.i.s.m.controller.UserController        : END /user API | traceId=9d0c813d-065a-4a3f-a7a4-5278d1c654e1
+2026-04-13T17:19:21.509+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : START /user API | traceId=a2855d7c-0b0b-44a6-a006-0831c680b39d
+2026-04-13T17:19:21.509+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : Generated reference | traceId=a2855d7c-0b0b-44a6-a006-0831c680b39d | ref=0175210832
+2026-04-13T17:19:21.509+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : User response created | traceId=a2855d7c-0b0b-44a6-a006-0831c680b39d | userId=USR001
+2026-04-13T17:19:21.509+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-5] TXN_LOGGER                               : TXN | traceId=a2855d7c-0b0b-44a6-a006-0831c680b39d | ref=0175210832 | userId=USR001 | status=SUCCESS
+2026-04-13T17:19:21.509+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-5] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=a2855d7c-0b0b-44a6-a006-0831c680b39d | userId=USR001 | action=SUCCESS
+2026-04-13T17:19:21.509+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-5] c.i.s.m.controller.UserController        : END /user API | traceId=a2855d7c-0b0b-44a6-a006-0831c680b39d
+2026-04-13T17:19:27.963+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : START /user API | traceId=390f86aa-0e42-4728-a8ed-74fd6d563606
+2026-04-13T17:19:27.963+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : Generated reference | traceId=390f86aa-0e42-4728-a8ed-74fd6d563606 | ref=0608554691
+2026-04-13T17:19:27.963+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : User response created | traceId=390f86aa-0e42-4728-a8ed-74fd6d563606 | userId=USR001
+2026-04-13T17:19:27.963+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-6] TXN_LOGGER                               : TXN | traceId=390f86aa-0e42-4728-a8ed-74fd6d563606 | ref=0608554691 | userId=USR001 | status=SUCCESS
+2026-04-13T17:19:27.963+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-6] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=390f86aa-0e42-4728-a8ed-74fd6d563606 | userId=USR001 | action=SUCCESS
+2026-04-13T17:19:27.964+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : END /user API | traceId=390f86aa-0e42-4728-a8ed-74fd6d563606
+2026-04-13T17:19:37.527+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : START /user API | traceId=3c1e443d-f111-40a5-823f-a1a73fed5bbf
+2026-04-13T17:19:37.527+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : Generated reference | traceId=3c1e443d-f111-40a5-823f-a1a73fed5bbf | ref=0016999716
+2026-04-13T17:19:37.528+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : User response created | traceId=3c1e443d-f111-40a5-823f-a1a73fed5bbf | userId=USR001
+2026-04-13T17:19:37.528+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-7] TXN_LOGGER                               : TXN | traceId=3c1e443d-f111-40a5-823f-a1a73fed5bbf | ref=0016999716 | userId=USR001 | status=SUCCESS
+2026-04-13T17:19:37.528+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-7] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=3c1e443d-f111-40a5-823f-a1a73fed5bbf | userId=USR001 | action=SUCCESS
+2026-04-13T17:19:37.528+07:00  INFO 3452 --- [http-nio-0.0.0.0-8080-exec-7] c.i.s.m.controller.UserController        : END /user API | traceId=3c1e443d-f111-40a5-823f-a1a73fed5bbf
+2026-04-13T17:24:47.056+07:00  INFO 3452 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:24:47.061+07:00  WARN 3452 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T17:24:47.062+07:00  INFO 3452 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T17:24:47.063+07:00  INFO 3452 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T17:24:49.112+07:00  INFO 18020 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 18020 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T17:24:49.114+07:00  INFO 18020 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T17:24:49.169+07:00  INFO 18020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-13T17:24:49.170+07:00  INFO 18020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-13T17:24:49.998+07:00  INFO 18020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T17:24:49.999+07:00  INFO 18020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T17:24:50.017+07:00  INFO 18020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
+2026-04-13T17:24:50.027+07:00  INFO 18020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T17:24:50.028+07:00  INFO 18020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T17:24:50.034+07:00  INFO 18020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2026-04-13T17:24:50.684+07:00  INFO 18020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T17:24:50.694+07:00  INFO 18020 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T17:24:50.694+07:00  INFO 18020 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T17:24:50.850+07:00  INFO 18020 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T17:24:50.855+07:00  INFO 18020 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T17:24:50.855+07:00  INFO 18020 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1685 ms
+2026-04-13T17:24:50.961+07:00  INFO 18020 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T17:24:51.092+07:00  INFO 18020 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T17:24:51.094+07:00  INFO 18020 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T17:24:51.102+07:00  INFO 18020 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T17:24:51.262+07:00  INFO 18020 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T17:24:51.299+07:00  INFO 18020 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-04-13T17:24:51.321+07:00  INFO 18020 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T17:24:51.535+07:00  INFO 18020 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T17:24:51.791+07:00  INFO 18020 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T17:24:51.794+07:00  INFO 18020 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:24:51.937+07:00  WARN 18020 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T17:24:52.693+07:00  INFO 18020 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T17:24:52.700+07:00  INFO 18020 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T17:24:52.778+07:00  INFO 18020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T17:24:52.788+07:00  INFO 18020 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 4.054 seconds (process running for 4.88)
+2026-04-13T17:24:52.986+07:00  INFO 18020 --- [RMI TCP Connection(4)-192.168.106.242] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T17:24:52.986+07:00  INFO 18020 --- [RMI TCP Connection(4)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T17:24:52.987+07:00  INFO 18020 --- [RMI TCP Connection(4)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-13T17:25:05.578+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : START /user API | traceId=254e5e43-4b29-488c-bca1-94dc76a03ecb
+2026-04-13T17:25:05.579+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : Generated reference | traceId=254e5e43-4b29-488c-bca1-94dc76a03ecb | ref=0502663767
+2026-04-13T17:25:05.581+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : User response created | traceId=254e5e43-4b29-488c-bca1-94dc76a03ecb | userId=USR001
+2026-04-13T17:25:05.581+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-1] TXN_LOGGER                               : TXN | traceId=254e5e43-4b29-488c-bca1-94dc76a03ecb | ref=0502663767 | userId=USR001 | status=SUCCESS
+2026-04-13T17:25:05.581+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-1] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=254e5e43-4b29-488c-bca1-94dc76a03ecb | userId=USR001 | action=SUCCESS
+2026-04-13T17:25:05.581+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-1] c.i.s.m.controller.UserController        : END /user API | traceId=254e5e43-4b29-488c-bca1-94dc76a03ecb
+2026-04-13T17:31:44.159+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : START /user API | traceId=d6e11b9d-5b9a-41e3-98d3-a90409382809
+2026-04-13T17:31:44.159+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : Generated reference | traceId=d6e11b9d-5b9a-41e3-98d3-a90409382809 | ref=0236471753
+2026-04-13T17:31:44.159+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : User response created | traceId=d6e11b9d-5b9a-41e3-98d3-a90409382809 | userId=USR001
+2026-04-13T17:31:44.159+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-6] TXN_LOGGER                               : TXN | traceId=d6e11b9d-5b9a-41e3-98d3-a90409382809 | ref=0236471753 | userId=USR001 | status=SUCCESS
+2026-04-13T17:31:44.159+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-6] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=d6e11b9d-5b9a-41e3-98d3-a90409382809 | userId=USR001 | action=SUCCESS
+2026-04-13T17:31:44.159+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-6] c.i.s.m.controller.UserController        : END /user API | traceId=d6e11b9d-5b9a-41e3-98d3-a90409382809
+2026-04-13T17:32:17.947+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : START /user API | traceId=2ab51951-001b-4a5f-8b80-f8eb03a2dea1
+2026-04-13T17:32:17.948+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : Generated reference | traceId=2ab51951-001b-4a5f-8b80-f8eb03a2dea1 | ref=0310491043
+2026-04-13T17:32:17.948+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : User response created | traceId=2ab51951-001b-4a5f-8b80-f8eb03a2dea1 | userId=USR001
+2026-04-13T17:32:17.948+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-2] TXN_LOGGER                               : TXN | traceId=2ab51951-001b-4a5f-8b80-f8eb03a2dea1 | ref=0310491043 | userId=USR001 | status=SUCCESS
+2026-04-13T17:32:17.948+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-2] AUDIT_LOGGER                             : AUDIT | USER_FETCH | traceId=2ab51951-001b-4a5f-8b80-f8eb03a2dea1 | userId=USR001 | action=SUCCESS
+2026-04-13T17:32:17.948+07:00  INFO 18020 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : END /user API | traceId=2ab51951-001b-4a5f-8b80-f8eb03a2dea1
+2026-04-13T17:36:20.933+07:00  INFO 18020 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:36:20.938+07:00  WARN 18020 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T17:36:20.939+07:00  INFO 18020 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T17:36:20.942+07:00  INFO 18020 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T17:36:25.488+07:00  INFO 20056 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 20056 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T17:36:25.489+07:00  INFO 20056 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T17:36:25.545+07:00  INFO 20056 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-13T17:36:25.545+07:00  INFO 20056 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-13T17:36:26.541+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T17:36:26.542+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T17:36:26.561+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
+2026-04-13T17:36:26.568+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T17:36:26.569+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T17:36:26.578+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2026-04-13T17:36:27.289+07:00  INFO 20056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T17:36:27.300+07:00  INFO 20056 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T17:36:27.300+07:00  INFO 20056 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T17:36:27.488+07:00  INFO 20056 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T17:36:27.493+07:00  INFO 20056 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T17:36:27.494+07:00  INFO 20056 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1949 ms
+2026-04-13T17:36:27.608+07:00  INFO 20056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-13T17:36:27.741+07:00  INFO 20056 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T17:36:27.742+07:00  INFO 20056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-13T17:36:27.753+07:00  INFO 20056 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T17:36:27.906+07:00  INFO 20056 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T17:36:27.945+07:00  INFO 20056 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-04-13T17:36:27.970+07:00  INFO 20056 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T17:36:28.170+07:00  INFO 20056 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T17:36:28.489+07:00  INFO 20056 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T17:36:28.491+07:00  INFO 20056 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:36:28.696+07:00  WARN 20056 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T17:36:29.415+07:00  INFO 20056 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T17:36:29.426+07:00  INFO 20056 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T17:36:29.502+07:00  INFO 20056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T17:36:29.513+07:00  INFO 20056 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 4.407 seconds (process running for 5.226)
+2026-04-13T17:36:30.086+07:00  INFO 20056 --- [RMI TCP Connection(3)-192.168.106.242] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-13T17:36:30.087+07:00  INFO 20056 --- [RMI TCP Connection(3)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-13T17:36:30.089+07:00  INFO 20056 --- [RMI TCP Connection(3)-192.168.106.242] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-13T17:36:36.593+07:00  INFO 20056 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : START /user API | traceId=cb6759a2-1042-4a77-85d8-3492cbb719ca
+2026-04-13T17:36:36.593+07:00  INFO 20056 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : Generated reference | traceId=cb6759a2-1042-4a77-85d8-3492cbb719ca | ref=0838832146
+2026-04-13T17:36:36.595+07:00  INFO 20056 --- [http-nio-0.0.0.0-8080-exec-2] c.i.s.m.controller.UserController        : END /user API | traceId=cb6759a2-1042-4a77-85d8-3492cbb719ca
+2026-04-13T17:36:48.071+07:00  INFO 20056 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : START /user API | traceId=1e55c155-ab66-4ec1-b997-feddc9ecd9a7
+2026-04-13T17:36:48.071+07:00  INFO 20056 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : Generated reference | traceId=1e55c155-ab66-4ec1-b997-feddc9ecd9a7 | ref=0646882701
+2026-04-13T17:36:48.071+07:00  INFO 20056 --- [http-nio-0.0.0.0-8080-exec-3] c.i.s.m.controller.UserController        : END /user API | traceId=1e55c155-ab66-4ec1-b997-feddc9ecd9a7
+2026-04-13T17:36:48.886+07:00  INFO 20056 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : START /user API | traceId=27a3bc4d-12f3-4d09-8083-4985b49a2292
+2026-04-13T17:36:48.886+07:00  INFO 20056 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : Generated reference | traceId=27a3bc4d-12f3-4d09-8083-4985b49a2292 | ref=0048571518
+2026-04-13T17:36:48.887+07:00  INFO 20056 --- [http-nio-0.0.0.0-8080-exec-8] c.i.s.m.controller.UserController        : END /user API | traceId=27a3bc4d-12f3-4d09-8083-4985b49a2292
+2026-04-13T17:41:03.646+07:00  INFO 20056 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-04-13T17:41:03.676+07:00  INFO 20056 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:41:03.681+07:00  WARN 20056 --- [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T17:41:03.683+07:00  INFO 20056 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-13T17:41:03.685+07:00  INFO 20056 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-13T17:41:03.752+07:00  INFO 20056 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 20056 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T17:41:03.752+07:00  INFO 20056 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T17:41:03.954+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T17:41:03.954+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T17:41:03.956+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2026-04-13T17:41:03.958+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T17:41:03.958+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T17:41:03.959+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2026-04-13T17:41:04.060+07:00  INFO 20056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T17:41:04.061+07:00  INFO 20056 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T17:41:04.061+07:00  INFO 20056 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T17:41:04.151+07:00  INFO 20056 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T17:41:04.153+07:00  INFO 20056 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T17:41:04.154+07:00  INFO 20056 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 400 ms
+2026-04-13T17:41:04.199+07:00  INFO 20056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-04-13T17:41:04.201+07:00  INFO 20056 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T17:41:04.201+07:00  INFO 20056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-04-13T17:41:04.201+07:00  INFO 20056 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T17:41:04.249+07:00  INFO 20056 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T17:41:04.252+07:00  INFO 20056 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T17:41:04.260+07:00  INFO 20056 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T17:41:04.277+07:00  INFO 20056 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T17:41:04.277+07:00  INFO 20056 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:41:04.371+07:00  WARN 20056 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T17:41:04.708+07:00  INFO 20056 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T17:41:04.713+07:00  INFO 20056 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T17:41:04.740+07:00  INFO 20056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T17:41:04.746+07:00  INFO 20056 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 1.012 seconds (process running for 280.685)
+2026-04-13T17:41:04.747+07:00  INFO 20056 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-13T17:41:20.419+07:00  INFO 20056 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-04-13T17:41:20.427+07:00  INFO 20056 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:41:20.428+07:00  WARN 20056 --- [Thread-7] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T17:41:20.429+07:00  INFO 20056 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-04-13T17:41:20.430+07:00  INFO 20056 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-04-13T17:41:20.493+07:00  INFO 20056 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Starting MyFirstWebappApplication using Java 23.0.1 with PID 20056 (E:\Todo\Learn Java Spring Boot\learn-spring-boot\target\classes started by Elay.Kak in E:\Todo\Learn Java Spring Boot\learn-spring-boot)
+2026-04-13T17:41:20.493+07:00  INFO 20056 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-13T17:41:20.701+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T17:41:20.701+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-04-13T17:41:20.705+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+2026-04-13T17:41:20.708+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-04-13T17:41:20.708+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-13T17:41:20.710+07:00  INFO 20056 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2026-04-13T17:41:20.825+07:00  INFO 20056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-13T17:41:20.825+07:00  INFO 20056 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-13T17:41:20.825+07:00  INFO 20056 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-04-13T17:41:20.885+07:00  INFO 20056 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2026-04-13T17:41:20.887+07:00  INFO 20056 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-13T17:41:20.887+07:00  INFO 20056 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 392 ms
+2026-04-13T17:41:20.922+07:00  INFO 20056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-04-13T17:41:20.924+07:00  INFO 20056 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:testdb user=SA
+2026-04-13T17:41:20.924+07:00  INFO 20056 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-04-13T17:41:20.924+07:00  INFO 20056 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-04-13T17:41:20.965+07:00  INFO 20056 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-13T17:41:20.967+07:00  INFO 20056 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-04-13T17:41:20.973+07:00  INFO 20056 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-13T17:41:20.983+07:00  INFO 20056 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-13T17:41:20.983+07:00  INFO 20056 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:41:21.058+07:00  WARN 20056 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-13T17:41:21.371+07:00  INFO 20056 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-13T17:41:21.375+07:00  INFO 20056 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2026-04-13T17:41:21.400+07:00  INFO 20056 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-04-13T17:41:21.405+07:00  INFO 20056 --- [restartedMain] c.i.s.m.MyFirstWebappApplication         : Started MyFirstWebappApplication in 0.927 seconds (process running for 297.345)
+2026-04-13T17:41:21.406+07:00  INFO 20056 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-13T17:42:32.054+07:00  INFO 20056 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 6 class path changes (1 addition, 4 deletions, 1 modification)
+2026-04-13T17:42:32.062+07:00  INFO 20056 --- [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-13T17:42:32.062+07:00  WARN 20056 --- [Thread-12] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2026-04-13T17:42:32.063+07:00  INFO 20056 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-04-13T17:42:32.064+07:00  INFO 20056 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.

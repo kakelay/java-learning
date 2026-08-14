@@ -1,0 +1,52 @@
+package com.in28minutes.springboot.myfirstwebapp.controller.versioning;
+
+import com.in28minutes.springboot.myfirstwebapp.common.TraceLogger;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class VersioningPersonController {
+
+    private final TraceLogger traceLogger;
+
+    public VersioningPersonController(TraceLogger traceLogger) {
+        this.traceLogger = traceLogger;
+    }
+
+    @GetMapping("/v1/person")
+    public PersonV1 getFirstVersionOfPerson(){
+        traceLogger.logTrace("Processing /v1/person request");
+        return new PersonV1("Kak Elay");
+    }
+
+    @GetMapping("/v2/person")
+    public PersonV2 getSecondVersionOfPerson(){
+        traceLogger.logTrace("Processing /v2/person request");
+        return new PersonV2(new Name ("Kruy" , "Tharin"));
+    }
+
+    @GetMapping(path = "/person",params = "version=1")
+    public PersonV2 getFirstVersionOfPersonRequestParameter(){
+        traceLogger.logTrace("Processing /person?version=1 request");
+        return new PersonV2(new Name ("Kak" , "MengHour"));
+    }
+
+    @GetMapping(path = "/person",params = "version=2")
+    public PersonV2 getSecondVersionOfPersonRequestParameter(){
+        traceLogger.logTrace("Processing /person?version=2 request");
+        return new PersonV2(new Name ("Ly" , "MengNgounn"));
+    }
+
+    @GetMapping(path = "/person/header", headers = "X-API-VERSION=1")
+    public PersonV1 getFirstVersionOfPersonRequestHeader(){
+        traceLogger.logTrace("Processing /person/header header v1 request");
+        return new PersonV1("MAK LIN1");
+    }
+
+    @GetMapping(path = "/person/header", headers = "X-API-VERSION=2")
+    public PersonV1 getSecondVersionOfPersonRequestHeader(){
+        traceLogger.logTrace("Processing /person/header header v2 request");
+        return new PersonV1("MAK LIN2");
+    }
+
+}
