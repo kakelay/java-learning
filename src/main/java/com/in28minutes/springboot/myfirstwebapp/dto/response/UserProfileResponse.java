@@ -49,4 +49,5 @@ public class UserProfileResponse {
     private Boolean profileComplete;
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
+    private String phoneNumber;
 }

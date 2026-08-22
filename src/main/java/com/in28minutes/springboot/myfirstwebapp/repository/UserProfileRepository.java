@@ -25,7 +25,7 @@ public interface UserProfileRepository extends JpaRepository<UserProfile, Long> 
     @Query("SELECT p FROM UserProfile p WHERE p.firstName LIKE %:name% OR p.lastName LIKE %:name%")
     List<UserProfile> findByNameContaining(@Param("name") String name);
 
-    @Query("SELECT p FROM UserProfile p WHERE p.profileComplete = false")
+    @Query("SELECT p FROM UserProfile p WHERE p.profileComplete = true OR p.profileComplete = false ")
     List<UserProfile> findIncompleteProfiles();
 
     @Query("SELECT COUNT(p) FROM UserProfile p WHERE p.country = :country")
