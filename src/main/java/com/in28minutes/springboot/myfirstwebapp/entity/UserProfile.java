@@ -123,7 +123,8 @@ public class UserProfile {
 
     @Column(name = "is_profile_complete")
     @Builder.Default
-    private Boolean profileComplete = false;
+    private Boolean profileComplete = true;
+
 
     @CreationTimestamp
     @Column(name = "created_date", updatable = false)
